@@ -1,6 +1,6 @@
 :root{
     --bg-dark: #183861;
-    --bg-light: #0DAA70;
+    --bg-light: #0DAA70; 
     --accent-color: #355277;
     --secondary-light: #d4e5fa;
     --secondary-dark: #3D4145;
@@ -157,4 +157,8 @@ a{
     font-weight: 700;
     color: var(--accent-color);
     margin: 0;
+}
+
+.menu-item:hover{
+    cursor: pointer;
 }

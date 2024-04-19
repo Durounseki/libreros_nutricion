@@ -107,13 +107,13 @@ label{
     margin-bottom: 1vh;
 }
 
-#signup-container{
+#send-container{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#sign-up{
+/* #sign-up{
     width: 100px;
     height: 30px;
     background-color: var(--dark-blue);
@@ -121,7 +121,7 @@ label{
     border-radius: 5px;
     border: none;
     padding: 5px 10px;
-}
+} */
 
 a{
     color: #1f2937;
@@ -131,8 +131,12 @@ a{
     border: solid #3882f6;
 }
 
-input.valid-input{
-    border: solid  #9fd99c;
+.valid-input{
+    border: solid  #9fd99c;;
+}
+
+.invalid-input{
+    border: solid #e35d5d;
 }
 
 .error{

@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../styles/contacto.css">
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/fonts.css">
-    <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/contacto.js" defer></script>
+    <script src="../scripts/base.js" defer></script>
 </head>
 <body>
     <div class="header-container">
@@ -43,7 +44,7 @@
         </div>
 
         <div class="form-container">
-            <form action="javascript:void(0);" method="POST" id="sign-up-form">
+            <form action="javascript:void(0);" method="POST" id="contact-form">
                 <div class="patient-details">
                     <fieldset id="details">
                         <legend>Reserva tu consulta</legend>
@@ -54,7 +55,7 @@
                             </div>
                             <div class="input-group">
                                 <label for="last-name">APELLIDOS *</label>
-                                <input type="text" name="last-name" id="last-name" placeholder="Flores García" required minlength="1" maxlength="100">
+                                <input type="text" name="last-name" id="last-name" placeholder="Flores García" required minlength="1" maxlength="50">
                             </div>
                         </div>
                         <div class="field">
@@ -64,14 +65,15 @@
                             </div>
                             <div class="input-group">
                                 <label for="phone-number">NÚMERO TELEFÓNICO *</label>
-                                <input type="tel" name="phone-number" id="phone-number" placeholder="5511223344" required>
+                                <!-- Telephone number should only include numbers and spaces or hyphens, the length should be at least 10 digits -->
+                                <input type="tel" name="phone-number" id="phone-number" placeholder="5511223344" required pattern="[0-9\s\-]{10,}">
                             </div>
                         </div>
                         <div class="field">
                             <div class="input-group">
                                 <label for="service">TIPO DE CONSULTA *</label>
                                 <select name="service" id="service" required>
-                                    <option value="0" selected>Elige una opcion</option>
+                                    <option value="0" selected disabled hidden>Elige una opcion</option>
                                     <option value="nutricion-clinica">Nutrición clínica</option>
                                     <option value="nutricion-deportiva">Nutrición deportiva</option>
                                     <option value="planes-entrenamiento">Planes de entrenamiento</option>
@@ -82,7 +84,7 @@
                         </div>
                     </fieldset>
                 </div>
-                <div id="signup-container">
+                <div id="send-container">
                     <button class="submit-button" type="submit" id="submit">Enviar</button>
                 </div>
             </form>
