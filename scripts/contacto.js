@@ -35,27 +35,9 @@ function showValid(event){
 
 }
 
-submitButton.addEventListener('click',submit);
-
-function submit(event){
-    //Remove default messages
-    event.preventDefault();
-    //Remove error messages if already displayed
-    resetErrorMessage();
-    let hasInvalidInput = false;
-
-    //Check the validity of the inputs
-    for(let input of inputs){
-        if(!input.validity.valid){
-            displayErrorMessage(input,getErrorMessage(input));
-            hasInvalidInput = true;
-        }
-    }
-    if(!selectElement.validity.valid){
-        displayErrorMessage(selectElement,getErrorMessage(selectElement));
-        hasInvalidInput = true;
-    }
-
+function resetFormStyle(){
+    inputs.forEach(input => input.classList.remove("valid-input", "invalid-input"));
+    selectElement.classList.remove("valid-input", "invalid-input");
 }
 
 function resetErrorMessage() {
@@ -88,4 +70,83 @@ function displayErrorMessage(input, message){
     errorMessage.className = "error";
     errorMessage.textContent = message;
     input.parentNode.appendChild(errorMessage);
+}
+
+
+//Send email using web3forms and redirect to confirmation page
+const result = document.getElementById('result');
+submitButton.addEventListener('click',submit);
+
+function submit(event){
+    //Remove default messages
+    event.preventDefault();
+    //Remove error messages if already displayed
+    resetErrorMessage();
+    let hasInvalidInput = false;
+    let success;
+
+    //Check the validity of the inputs
+    for(let input of inputs){
+        if(!input.validity.valid){
+            displayErrorMessage(input,getErrorMessage(input));
+            hasInvalidInput = true;
+        }
+    }
+    if(!selectElement.validity.valid){
+        displayErrorMessage(selectElement,getErrorMessage(selectElement));
+        hasInvalidInput = true;
+    }
+
+    if (!hasInvalidInput){
+        success = sendInfo();
+    }
+
+    resetFormStyle();
+
+    if(success){
+        const baseUrl = getBaseUrl();
+        window.location.href = baseUrl + 'pages/confirmacion.html';
+    }
+
+}
+
+function sendInfo() {
+    const formData = new FormData(contactForm);
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.textContent = "Espere por favor..."
+
+    let success = false;
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.textContent = "¡Tus datos fueron enviados!" //Confirm and redirect to custom webpage
+                success = true;                
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Algo salió mal...";
+        })
+        .then(function() {
+            contactForm.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
+    return success;
 }

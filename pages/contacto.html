@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/fonts.css">
     <script src="../scripts/contacto.js" defer></script>
     <script src="../scripts/base.js" defer></script>
+    <!-- <script src="https://web3forms.com/client/script.js" async defer></script> -->
 </head>
 <body>
     <div class="header-container">
@@ -45,6 +46,7 @@
 
         <div class="form-container">
             <form action="javascript:void(0);" method="POST" id="contact-form">
+                <input type="hidden" name="access_key" value="1666fd03-5f41-41d4-b6cb-8d5748eb75b3">
                 <div class="patient-details">
                     <fieldset id="details">
                         <legend>Reserva tu consulta</legend>
@@ -84,9 +86,11 @@
                         </div>
                     </fieldset>
                 </div>
+                <!-- <div class="h-captcha" data-lang="es" data-captcha="true"></div> -->
                 <div id="send-container">
                     <button class="submit-button" type="submit" id="submit">Enviar</button>
                 </div>
+                <div id="result"></div>
             </form>
         </div>
     </div>

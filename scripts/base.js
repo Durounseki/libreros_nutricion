@@ -5,6 +5,20 @@ menuItems.forEach(item => item.addEventListener('click',pageRedirect));
 function pageRedirect(event){
     
     const pageName = event.target.textContent.toLowerCase();
+    const baseUrl = getBaseUrl();
+
+    let relativeUrl;
+    if (pageName === "inicio") {
+        relativeUrl = baseUrl + 'index.html';  // Directly to index
+    } else {
+        relativeUrl = baseUrl + 'pages/' + pageName + '.html'; 
+    }
+
+    window.location.href = relativeUrl; //Redirect
+}
+
+function getBaseUrl(){
+    
     const currentUrl = window.location.href; //Fetch the current url
     
     // Find the index of the 'pages/' part:
@@ -17,14 +31,5 @@ function pageRedirect(event){
     }else{
         baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
     }
-    
-
-    let relativeUrl;
-    if (pageName === "inicio") {
-        relativeUrl = baseUrl + 'index.html';  // Directly to index
-    } else {
-        relativeUrl = baseUrl + 'pages/' + pageName + '.html'; 
-    }
-
-    window.location.href = relativeUrl; //Redirect
+    return baseUrl;
 }

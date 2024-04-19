@@ -165,3 +165,14 @@ a{
 input::placeholder{
     color: gray;
 }
+
+.h-captcha{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+#result{
+    text-align: center;
+}
