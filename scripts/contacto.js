@@ -103,10 +103,10 @@ function submit(event){
 
     resetFormStyle();
 
-    if(success){
-        const baseUrl = getBaseUrl();
-        window.location.href = baseUrl + 'pages/confirmacion.html';
-    }
+    // if(success){
+    //     const baseUrl = getBaseUrl();
+    //     window.location.href = baseUrl + 'pages/confirmacion.html';
+    // }
 
 }
 
@@ -119,6 +119,7 @@ function sendInfo() {
     result.textContent = "Espere por favor..."
 
     let success = false;
+    const baseUrl = getBaseUrl();
 
     fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -135,7 +136,7 @@ function sendInfo() {
                 success = true;                
             } else {
                 console.log(response);
-                result.innerHTML = json.message;
+                result.textContent = json.message;
             }
         })
         .catch(error => {
@@ -143,10 +144,14 @@ function sendInfo() {
             result.innerHTML = "Algo salió mal...";
         })
         .then(function() {
-            contactForm.reset();
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 3000);
+            if(success){
+                window.location.href = baseUrl + 'pages/confirmacion.html';
+            }else{
+                contactForm.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 3000);
+            }
         });
     return success;
 }
