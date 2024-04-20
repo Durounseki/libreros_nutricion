@@ -184,9 +184,18 @@
 .back-icon{
     margin-right: auto;
 }
+.back-icon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
 
 .forward-icon{
     margin-left: auto;
+}
+
+.forward-icon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .testimonial{
