@@ -66,6 +66,11 @@ body{
     border-right: solid var(--secondary-dark);
 }
 
+.menu-item.active{
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
 .cta-container{
     width: 60vw;
     margin: 5vh 20vw;
@@ -160,5 +165,67 @@ a{
 }
 
 .menu-item:hover{
+    cursor: pointer;
+    color: var(--bg-light);
+}
+
+/* Dropdown arrow */
+.arrow{
+    margin-left: 10px;
+}
+/*
+Make the .dropdown menu container to slightly overlap the menu item 'servicios'
+so that if the mouse leaves the menu item but enters the dropdown container, the dropdown
+is still displayed.
+*/
+.dropdown-container{
+    display: flex;
+    position: fixed;
+    top: 17vh;
+    left: 27vw;
+    padding-top: 2vh;
+    /* Mantain container behind all the other elements to prevent the hovering event */
+    z-index: -1;
+}
+/* bring the container to the front when hovering over the menu item */
+.dropdown-container.show{
+    z-index: 101;
+}
+
+.dropdown-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    box-shadow: 0 5px 5px #d3d3d340;
+    padding: 2vh 3vw;
+    background-color: white;
+    /* Rolldown effect */
+    transform: scaleY(0.5);
+    transform-origin: top;
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.dropdown-menu.show{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.service{
+    margin: 0;
+}
+
+.service:nth-child(-n+5){
+    border-bottom: solid 1px var(--secondary-dark);
+    padding-bottom: 2vh;
+}
+
+.service:nth-child(n+2){
+    /* border-bottom: solid 1px var(--secondary-dark); */
+    padding-top: 1vh;
+}
+
+.service:hover{
+    color: var(--bg-light);
     cursor: pointer;
 }

@@ -48,7 +48,10 @@
     border-radius: 23px;
     margin-right: auto;
     margin-top: 3vh;
-    /* margin-top: 10px; */
+}
+
+.booking-button:hover{
+    transform: scale(1.05);
 }
 
 .intro-image{

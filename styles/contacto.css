@@ -17,14 +17,6 @@
     padding-right: max(4vw,20px);
 }
 
-/* .phone-and-address{
-    display: flex;
-    flex-direction: column;
-    gap: 1vh;
-    justify-content: center;
-    align-content: center;
-} */
-
 .phone, .address{
     display: flex;
     gap: 20px;
@@ -156,6 +148,10 @@ a{
     border-radius: 23px;
     margin-right: 0 auto;
     border: none;
+}
+
+.submit-button:hover{
+    cursor: pointer;
 }
 
 .placeholder{
