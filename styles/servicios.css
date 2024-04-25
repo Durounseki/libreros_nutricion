@@ -127,3 +127,22 @@
 .services-container .service:nth-child(even) .service-image img{
     border-radius: 10vw 10vh 10vw 10vh;
 }
+
+.service-learn-more{
+    font-size: 18px;
+    display: inline-block;
+    justify-self: center;
+    padding: 14px 23px;
+    border: solid 1px var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 23px;
+    margin-right: auto;
+    margin-top: 3vh;
+}
+
+.service-learn-more:hover{
+    border: solid 1px var(--bg-light);
+    transform: scale(1.1);
+    cursor: pointer;
+    color: var(--bg-light);
+}
