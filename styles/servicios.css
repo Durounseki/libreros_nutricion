@@ -1,5 +1,6 @@
 .introduction-container{
-    margin-top: 25vh;
+    padding-top: 25vh;
+    padding-bottom: 10vh;
     display: flex;
     gap: 5vw;
     width: 80vw;
@@ -14,28 +15,6 @@
     gap: 2vh;
     width: 50vw;
     text-align: left;
-}
-
-.intro-main{
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--bg-dark);
-    margin: 0;
-}
-
-.intro-second{
-    font-size: 36px;
-    font-weight: 400;
-    color: var(--secondary-dark);
-    margin: 0;
-}
-
-.intro-small{
-    font-size: 18px;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--accent-color);
-    margin: 0;
 }
 
 .booking-button{
@@ -74,26 +53,33 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
-    gap: 8vh;
+    gap: 15vh;
     h2{
-        font-size: 36px;
+        font-size: 48px;
         font-weight: 700;
         color: var(--bg-dark);
         margin: 0;
     }
     h3{
-        font-size: 24px;
-        font-weight: 400;
+        font-size: 36px;
+        font-weight: 700;
         color: var(--secondary-dark);
         margin: 0;
+        margin-bottom: 5vh;
     }
     p{
         font-size: 18px;
         font-weight: 400;
         color: var(--accent-color);
         margin: 0;
+        margin-bottom: 2vh;
     }
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
 }
 
 .service{
@@ -111,18 +97,33 @@
     gap: 2vh;
 }
 
-.service-image{
+.service-image {
     width: 35vw;
-    img{
-        width: 100%;
-        height: auto;
-    }
+    height: calc( 35vw * 2 / 3);
+    overflow: hidden; 
+    position: relative; /* Make the container a reference point for absolute positioning */
 }
 
-.services-container .service:nth-child(odd) .service-image img {
+.service-image img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Center the image within the container */
+}
+
+.services-container .service:nth-child(odd) .service-image {
     border-radius: 10vh 10vw 10vh 10vw;
 }
 
-.services-container .service:nth-child(even) .service-image img {
+.services-container .service:nth-child(even) .service-image {
+    border-radius: 10vw 10vh 10vw 10vh;
+}
+
+.services-container .service:nth-child(odd) .service-image img{
+    border-radius: 10vh 10vw 10vh 10vw;
+}
+
+.services-container .service:nth-child(even) .service-image img{
     border-radius: 10vw 10vh 10vw 10vh;
 }

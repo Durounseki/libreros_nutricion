@@ -72,8 +72,14 @@ body{
 }
 
 .cta-container{
-    width: 60vw;
-    margin: 5vh 20vw;
+    padding: 5vh 20vw;
+    display: flex;
+    /* justify-content: center; */
+}
+
+.cta{
+    /* width: 60vw;
+    padding: 5vh 20vw; */
     background-color: var(--bg-light);
     border-radius: 0 40px 0 40px;
     display: flex;
