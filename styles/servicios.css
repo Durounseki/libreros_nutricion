@@ -1,0 +1,128 @@
+.introduction-container{
+    margin-top: 25vh;
+    display: flex;
+    gap: 5vw;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2vh;
+    width: 50vw;
+    text-align: left;
+}
+
+.intro-main{
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--bg-dark);
+    margin: 0;
+}
+
+.intro-second{
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--secondary-dark);
+    margin: 0;
+}
+
+.intro-small{
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.booking-button{
+    font-size: 18px;
+    display: inline-block;
+    justify-self: center;
+    padding: 14px 23px;
+    background-color: var(--bg-light);
+    color: white;
+    border-radius: 23px;
+    margin-right: auto;
+    margin-top: 3vh;
+}
+
+.booking-button:hover{
+    transform: scale(1.05);
+}
+
+.intro-image{
+    width: 25vw;
+    /* height: 35vw; */
+    border-radius: 20px;
+    margin: 2vh 0;
+    /* box-shadow: 5px 10px 20px var(--secondary-dark); */
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+}
+
+.services-container{
+    width: 100vw;
+    padding: 5vh 10vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    gap: 8vh;
+    h2{
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--bg-dark);
+        margin: 0;
+    }
+    h3{
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--secondary-dark);
+        margin: 0;
+    }
+    p{
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--accent-color);
+        margin: 0;
+    }
+}
+
+.service{
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    gap: 10vw;
+    align-items: center;
+}
+
+.service-text{
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.service-image{
+    width: 35vw;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.services-container .service:nth-child(odd) .service-image img {
+    border-radius: 10vh 10vw 10vh 10vw;
+}
+
+.services-container .service:nth-child(even) .service-image img {
+    border-radius: 10vw 10vh 10vw 10vh;
+}

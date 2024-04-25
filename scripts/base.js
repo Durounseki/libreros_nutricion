@@ -1,5 +1,6 @@
 const menuKeys = {
     "index": 0,
+    "servicios": 1,
     "nutricion-clinica": 1,
     "control-de-peso": 1,
     "nutricion-deportiva": 1,
@@ -22,6 +23,8 @@ function pageRedirect(event){
     let relativeUrl;
     if (pageName === "inicio") {
         relativeUrl = baseUrl + 'index.html';  // Directly to index
+    }else if(pageName.includes('servicios')){ //Servicios tab contains an arrow
+        relativeUrl = baseUrl + 'pages/servicios.html';
     } else {
         relativeUrl = baseUrl + 'pages/' + pageName + '.html'; 
     }

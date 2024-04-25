@@ -185,7 +185,7 @@ is still displayed.
     left: 27vw;
     padding-top: 2vh;
     /* Mantain container behind all the other elements to prevent the hovering event */
-    z-index: -1;
+    z-index: -100;
 }
 /* bring the container to the front when hovering over the menu item */
 .dropdown-container.show{
@@ -211,21 +211,21 @@ is still displayed.
     opacity: 1;
 }
 
-.service{
+.service-tab{
     margin: 0;
 }
 
-.service:nth-child(-n+5){
+.service-tab:nth-child(-n+5){
     border-bottom: solid 1px var(--secondary-dark);
     padding-bottom: 2vh;
 }
 
-.service:nth-child(n+2){
+.service-tab:nth-child(n+2){
     /* border-bottom: solid 1px var(--secondary-dark); */
     padding-top: 1vh;
 }
 
-.service:hover{
+.service-tab:hover{
     color: var(--bg-light);
     cursor: pointer;
 }
