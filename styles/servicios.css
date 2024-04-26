@@ -142,7 +142,7 @@
 
 .service-learn-more:hover{
     border: solid 1px var(--bg-light);
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
     color: var(--bg-light);
 }
