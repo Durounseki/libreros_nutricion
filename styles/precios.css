@@ -1,0 +1,103 @@
+.precios-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25vh;
+    gap: 5vh;
+}
+
+.pricing-grid {
+    background-color: #f5f7fb;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* Two equal columns */
+    gap: 10px; 
+    width: 50vw; 
+    padding: 5vh;
+    align-items: center;
+}
+
+.header-cell{ 
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 5vh;
+}
+
+.header-cell:nth-child(2){
+    text-align: left;
+}
+.header-cell:nth-child(3){
+    text-align: right;
+}
+
+.row-label{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+:nth-child(1 of .row-label) {
+    grid-row: 2 / 8;
+}
+:nth-child(2 of .row-label) {
+    grid-row: 9 / 15;
+}
+:nth-child(3 of .row-label) {
+    grid-row: 16 / 21;
+}
+
+.service-title{
+    padding: 10px;
+    grid-column: 2 / 4;
+    margin-bottom: 5px;
+}
+
+.service-cell{
+    padding: 10px;
+    text-align: left;
+    grid-column-start: 2;
+}
+
+.price-cell{
+    padding: 10px;
+    text-align: right;
+    grid-column-start: 3;
+}
+
+.separator{
+    background-color: lightgray;
+    grid-column: 1 / 4;
+    height: 1px;
+    margin: 2vh;
+}
+
+.footnote{
+    text-align: left;
+    font-size: smaller;
+    grid-column: 1 / 4;
+}
+
+#footnote1, #footnote2{
+    scroll-margin-top: 30vh;
+}
+
+.booking-button{
+    font-size: 18px;
+    display: inline-block;
+    justify-self: center;
+    padding: 14px 23px;
+    background-color: var(--bg-light);
+    color: white;
+    border-radius: 23px;
+    margin-right: auto;
+    margin-top: 3vh;
+}
+
+.booking-button:hover{
+    transform: scale(1.05);
+}
+
+sup a{
+    color: black;
+}
