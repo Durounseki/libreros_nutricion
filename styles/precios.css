@@ -11,17 +11,34 @@
     background-color: #f5f7fb;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;  /* Two equal columns */
-    gap: 10px; 
-    width: 50vw; 
-    padding: 5vh;
+    grid-template-columns: repeat(3,minmax(250px,1fr));  /* Two equal columns */
     align-items: center;
+    box-shadow: 0 0 5px lightgray;
 }
 
 .header-cell{ 
-    padding: 10px;
+    height: 20px;
+    padding: 0 10px;
+    padding-top: 5vh;
+    padding-bottom: 3vh;
     font-weight: bold;
-    margin-bottom: 5vh;
+    position: sticky;
+    top: 0;
+    z-index: 150;
+    background-color: #f5f7fb;
+}
+
+:nth-child(1 of .header-cell), .row-label{
+    padding-left: 5vw;
+}
+:nth-child(3 of .header-cell), .price-cell{
+    padding-right: 5vw;
+}
+
+:nth-child(1 of .separator){
+    position: sticky;
+    top: 0;
+    z-index: 150;
 }
 
 .header-cell:nth-child(2){
@@ -31,6 +48,13 @@
     text-align: right;
 }
 
+.header-cell .sticky { /* Add a class to the row containing the header cells */
+    position: sticky;
+    top: 0; 
+    background-color: #f5f7fb; /* Match your grid background */
+    z-index: 2; /* Ensure the headers stay on top */
+}
+
 .row-label{
     display: flex;
     align-items: center;
@@ -38,19 +62,28 @@
 }
 
 :nth-child(1 of .row-label) {
-    grid-row: 2 / 8;
+    grid-row: 3 / 9;
 }
 :nth-child(2 of .row-label) {
-    grid-row: 9 / 15;
+    grid-row: 10 / 16;
 }
 :nth-child(3 of .row-label) {
-    grid-row: 16 / 21;
+    grid-row: 17 / 23;
+}
+:nth-child(4 of .row-label) {
+    grid-row: 24 / 30;
 }
 
 .service-title{
     padding: 10px;
+    padding-right: 5vw;
+    padding-bottom: 30px;
     grid-column: 2 / 4;
-    margin-bottom: 5px;
+}
+
+.empty-cell{
+    padding: 10px;
+    grid-column: 2 / 4;
 }
 
 .service-cell{
@@ -63,22 +96,35 @@
     padding: 10px;
     text-align: right;
     grid-column-start: 3;
+    padding-right: 5vw;
 }
 
+.separator-container{
+    background: #f5f7fb;
+    padding: 2vh 5vw;
+    display: flex;
+    justify-content: center;
+    grid-column: 1 / 4;
+}
 .separator{
     background-color: lightgray;
-    grid-column: 1 / 4;
     height: 1px;
-    margin: 2vh;
+    width: 100%;
 }
 
 .footnote{
     text-align: left;
     font-size: smaller;
     grid-column: 1 / 4;
+    padding: 0 5vw;
 }
 
-#footnote1, #footnote2{
+#footnote1{
+    padding-top: 3vh;
+    scroll-margin-top: 30vh;
+}
+#footnote2{
+    padding-bottom: 5vh;
     scroll-margin-top: 30vh;
 }
 

@@ -54,8 +54,15 @@ function getBaseUrl(){
 function getActivePage(){
 
     const currentUrl = window.location.href; //Fetch the current url
+    const urlParts = currentUrl.split('/');
 
-    let pageName = currentUrl.substring(currentUrl.lastIndexOf('/')+1, currentUrl.length - 5); //Remove .html extension
+    //Check if the last part contains a hash, for the prices page footnotes
+    let lastPart = urlParts[urlParts.length - 1];
+    if(lastPart.includes('#')){
+        lastPart = lastPart.split('#')[0]; //Remove everything after the hash
+    }
+
+    let pageName = lastPart.slice(0, - 5); //Remove .html extension
     const activeMenuItem = menuItems[menuKeys[pageName]];
     activeMenuItem.classList.add("active");
 
