@@ -2,7 +2,7 @@ const menuKeys = {
     "index": 0,
     "servicios": 1,
     "nutricion-clinica": 1,
-    "control-de-peso": 1,
+    "perdida-y-control-de-peso": 1,
     "nutricion-deportiva": 1,
     "planes-entrenamiento": 1,
     "diabetes": 1,
@@ -15,22 +15,43 @@ const menuItems = document.querySelectorAll(".menu-item");
 
 menuItems.forEach(item => item.addEventListener('click',pageRedirect));
 
+const serviceTabs = document.querySelectorAll(".service-tab");
+
+serviceTabs.forEach(tab => tab.addEventListener('click',pageRedirect));
+
 function pageRedirect(event){
-    
-    const pageName = event.target.textContent.toLowerCase();
+    const page = event.target;
+    const pageName = page.dataset.page;
     const baseUrl = getBaseUrl();
 
     let relativeUrl;
-    if (pageName === "inicio") {
-        relativeUrl = baseUrl + 'index.html';  // Directly to index
-    }else if(pageName.includes('servicios')){ //Servicios tab contains an arrow
-        relativeUrl = baseUrl + 'pages/servicios.html';
-    } else {
-        relativeUrl = baseUrl + 'pages/' + pageName + '.html'; 
+    if(page.classList.contains(".service-tab")){ //Check if the dropdown menu item was clicked
+        relativeUrl = baseUrl + '/pages/servicios/' + pageName + '.html';
+    }else if(pageName !== 'index'){
+        relativeUrl = baseUrl + '/pages/' + pageName + '.html';
+    }else{
+        relativeUrl = baseUrl + pageName + '.html';
     }
 
     window.location.href = relativeUrl; //Redirect
 }
+
+// function pageRedirect(event){
+    
+//     const pageName = event.target.textContent.toLowerCase();
+//     const baseUrl = getBaseUrl();
+
+//     let relativeUrl;
+//     if (pageName === "inicio") {
+//         relativeUrl = baseUrl + 'index.html';  // Directly to index
+//     }else if(pageName.includes('servicios')){ //Servicios tab contains an arrow
+//         relativeUrl = baseUrl + 'pages/servicios.html';
+//     } else {
+//         relativeUrl = baseUrl + 'pages/' + pageName + '.html'; 
+//     }
+
+//     window.location.href = relativeUrl; //Redirect
+// }
 
 function getBaseUrl(){
     
