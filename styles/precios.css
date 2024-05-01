@@ -222,3 +222,10 @@ sup a{
 li{
     padding: 10px;
 }
+
+.precios-title{
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--secondary-dark);
+    margin: 5vh 0;
+}
