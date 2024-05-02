@@ -25,10 +25,10 @@ function pageRedirect(event){
     const baseUrl = getBaseUrl();
 
     let relativeUrl;
-    if(page.classList.contains(".service-tab")){ //Check if the dropdown menu item was clicked
-        relativeUrl = baseUrl + '/pages/servicios/' + pageName + '.html';
+    if(page.classList.contains("service-tab")){ //Check if the dropdown menu item was clicked
+        relativeUrl = baseUrl + 'pages/servicios/' + pageName + '.html';
     }else if(pageName !== 'index'){
-        relativeUrl = baseUrl + '/pages/' + pageName + '.html';
+        relativeUrl = baseUrl + 'pages/' + pageName + '.html';
     }else{
         relativeUrl = baseUrl + pageName + '.html';
     }
