@@ -4,7 +4,7 @@ const menuKeys = {
     "nutricion-clinica": 1,
     "perdida-y-control-de-peso": 1,
     "nutricion-deportiva": 1,
-    "planes-entrenamiento": 1,
+    "planes-de-entrenamiento": 1,
     "diabetes": 1,
     "cineantropometria": 1,
     "precios": 2,

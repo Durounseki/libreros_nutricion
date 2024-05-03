@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
     <link rel="stylesheet" href="../../styles/fonts.css">
     <script src="https://kit.fontawesome.com/a5c4f7a4d5.js" crossorigin="anonymous"></script> <!-- Font awesome for icons-->
     <link rel="stylesheet" href="../../styles/base.css">
-    <link rel="stylesheet" href="../../styles/nutricion-clinica.css">
+    <link rel="stylesheet" href="../../styles/servicio.css">
     <script src="../../scripts/base.js" defer></script>
 </head>
 <body>
@@ -18,27 +17,84 @@
             <div class="title">ALFONSO LIBREROS NUTRIOLOGO</div>
         </div>
         <div class="menu">
-            <div class="menu-item">Inicio</div>
-            <div class="menu-item">Servicios <span class="arrow"><i class="fa-regular fa-square-caret-down"></i></span></div>
-            <div class="menu-item">Precios</div>
-            <div class="menu-item">Dr. Libreros</div>
-            <div class="menu-item">Contacto</div>
+            <div class="menu-item" data-page="index">Inicio</div>
+            <div class="menu-item" data-page="servicios">Servicios <span class="arrow"><i class="fa-solid fa-square-caret-down"></i></span></div>
+            <div class="menu-item" data-page="precios">Precios</div>
+            <div class="menu-item" data-page="dr-libreros">Dr. Libreros</div>
+            <div class="menu-item" data-page="contacto">Contacto</div>
         </div>
     </div>
     <div class="dropdown-container">      
         <div class="dropdown-menu">
-            <p class="service-tab">Nutrición clínica</p>
-            <p class="service-tab">Pérdida y control de peso</p>
-            <p class="service-tab">Nutrición deportiva</p>
-            <p class="service-tab">Planes de entrenamiento</p>
-            <p class="service-tab">Diabetes</p>
-            <p class="service-tab">Cineantropometría</p>
+            <p class="service-tab" data-page="nutricion-clinica">Nutrición clínica</p>
+            <p class="service-tab" data-page="perdida-y-control-de-peso">Pérdida y control de peso</p>
+            <p class="service-tab" data-page="nutricion-deportiva">Nutrición deportiva</p>
+            <p class="service-tab" data-page="planes-de-entrenamiento">Planes de entrenamiento</p>
+            <p class="service-tab" data-page="diabetes">Diabetes</p>
+            <p class="service-tab" data-page="cineantropometria">Cineantropometría</p>
         </div>
     </div>
-    <div class="cta-container" style="margin-top: 30vh;">
+
+    <div class="description-container">
+        <div class="service">
+            <p class="small-bold">Empoderándote para el control de la diabetes</p>
+            <h1 class="main-text">Educacion en Diabetes</h1>
+        </div>
+        <div class="service-image">
+            <div class="service-image"><img src="../../images/services/derick-mckinney-__QqvTI5Edc-unsplash.jpg" alt="Nutrición deportiva" title="Photo by Derick McKinney on Unsplash"></div>
+        </div>
+        <div class="service-summary">
+            <h2 class="summary-title">¿Vives con diabetes y buscas información y herramientas para controlar tu condición?</h2>
+            Nuestra educación en diabetes te brinda el conocimiento y el empoderamiento que necesitas para tomar mejores decisiones y
+            mejorar tu calidad de vida. Te guiaremos en la comprensión de:
+            <ul>
+                <li>
+                    <b>¿Qué es la diabetes y sus tipos?</b> Aprenderás sobre la diabetes tipo 1 y tipo 2, sus causas y sus efectos en el organismo.
+                </li>
+                <li>
+                    <b>Manejo de la glucemia</b>: Te enseñaremos a controlar tus niveles de glucosa en sangre a través de la alimentación, la actividad física y la medicación.
+                </li>
+                <li>
+                    <b>Nutrición para la diabetes</b>: Descubrirás cómo adaptar tu dieta para mantener niveles de glucosa estables y prevenir complicaciones.
+                </li>
+            </ul>
+        </div>
+        <div class="service-value">
+            <h2 class="value-title">
+                ¿Por qué elegir a nuestro educador en diabetes?
+            </h2>
+            <p class="value-text">
+                Nuestros planes de alimentación están diseñados para ayudarte a:
+                <ul>
+                    <li>
+                        <b>Información actualizada y basada en evidencia científica</b>: Te brindaremos información confiable y actualizada sobre el manejo de la diabetes.
+                    </li>
+                    <li>
+                        <b>Experiencia y conocimiento</b>: Nuestro educador en diabetes es un profesional certificado con amplia experiencia en el manejo de la diabetes.
+                    </li>
+                    <li>
+                        <b>Enfoque personalizado</b>: Creamos un plan educativo personalizado que se adapta a tus necesidades, estilo de vida y objetivos.
+                    </li>
+                    <li>
+                        <b>Soporte continuo</b>: Te brindaremos apoyo y seguimiento durante todo el proceso para asegurarte de que comprendas y puedas implementar las estrategias de manejo de la diabetes.
+                    </li>
+                    <li>
+                        <b>Comunicación clara y efectiva</b>: Nos comunicaremos contigo de manera clara y comprensible, utilizando un lenguaje adaptado a tu nivel de conocimiento.
+                    </li>
+                    <li>
+                        <b>Entorno compasivo y de apoyo</b>: Te brindaremos un espacio seguro y de apoyo para que puedas hacer preguntas y expresar tus inquietudes.
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="cta-container">
         <div class="cta">
-            <h2 class="cta-title">Nada por aqui... Estamos trabajando, por favor vuelve pronto.</h2>
-            <!-- <div class="booking-button"><a class="booking-link" href="../../pages/contacto.html">Agenda tu cita</a></div> -->
+            <h2 class="cta-title">
+                ¡Toma el control de tu diabetes y mejora tu calidad de vida!
+            </h2>
+            <div class="booking-button"><a class="booking-link" href="../../pages/contacto.html">Reserva tu consulta hoy mismo</a></div>
         </div>
     </div>
 
