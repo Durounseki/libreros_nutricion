@@ -1,0 +1,55 @@
+.header-container{
+    width: 96vw;
+    padding: 2vh 2vw;
+}
+
+.header{
+    width: 96vw;
+    font-size: 20px;
+    margin: 0;
+    gap: 2vw;
+}
+
+.logo{
+    width: 50px;
+}
+
+.title{
+    text-align: center;
+}
+
+.main-text{
+    font-size: 24px;
+}
+
+.secondary-text{
+    font-size: 20px;
+}
+
+.small-italic{
+    font-size: 16px;
+}
+
+.small-bold{
+    font-size: 16px;
+}
+
+.cta-container{
+    padding: 5vh 5vw;
+    display: flex;
+    /* justify-content: center; */
+}
+
+.cta{
+    border-radius: 0 20px 0 20px;
+    padding: 5vh 5vw;
+    gap: 2vh;
+    h2{
+        font-size: 24px;
+    }
+    .booking-button{
+        font-size: 16px;
+        padding: 10px 18px;
+        border-radius: 18px;
+    }
+}

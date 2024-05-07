@@ -2,6 +2,7 @@
     padding-top: 25vh;
     padding-bottom: 15vh;
     display: flex;
+    flex-direction: row;
     gap: 5vw;
     width: 80vw;
     justify-content: center;
@@ -15,28 +16,6 @@
     gap: 2vh;
     width: 50vw;
     text-align: left;
-}
-
-.intro-main{
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--bg-dark);
-    margin: 0;
-}
-
-.intro-second{
-    font-size: 36px;
-    font-weight: 400;
-    color: var(--secondary-dark);
-    margin: 0;
-}
-
-.intro-small{
-    font-size: 18px;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--accent-color);
-    margin: 0;
 }
 
 .booking-button{

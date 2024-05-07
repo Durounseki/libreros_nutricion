@@ -1,0 +1,76 @@
+.introduction-container{
+    flex-direction: column;
+    gap: 5vh;
+    width: 98vw;
+    padding-bottom: 10vh;
+}
+
+.introduction{
+    width: 80vw;
+    text-align: center;
+}
+
+.intro-image{
+    width: 80vw;
+    order: -1;
+}
+
+.booking-button{
+    margin: 2vh auto;
+}
+
+.value-proposition{
+    padding: 5vh 10vw;
+    h2{
+        font-size: 24px;
+    }
+    p{
+        font-size: 20px;
+    }
+    ul{
+        font-size: 16px;
+    }
+}
+
+.how-it-works{
+    padding: 0 2vw;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    h2{
+        font-size: 24px;
+    }
+    h3{
+        font-size: 20px;
+        margin-bottom: 2vh;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+
+.steps{
+    align-items: center;
+}
+
+.step{
+    flex-direction: column;
+    width: 80vw;
+    gap: 5vh;
+}
+
+.step-text{
+    width: 80vw;
+    text-align: center;
+}
+
+.step-image {
+    width: 80vw;
+    height: calc( 80vw * 2 / 3);
+}
+
+.how-it-works .step:nth-child(odd) .step-image {
+    order: -1;
+}
