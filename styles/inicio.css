@@ -153,22 +153,6 @@
     border-radius: 10vw 10vh 10vw 10vh;
 }
 
-/* .step-image{
-    width: 35vw;
-    img{
-        width: 100%;
-        height: auto;
-    }
-}
-
-.how-it-works .step:nth-child(odd) .step-image img {
-    border-radius: 10vh 10vw 10vh 10vw;
-}
-
-.how-it-works .step:nth-child(even) .step-image img {
-    border-radius: 10vw 10vh 10vw 10vh;
-} */
-
 .testimonials-container{
     display: flex;
     flex-direction: column;

@@ -72,5 +72,50 @@
 }
 
 .how-it-works .step:nth-child(odd) .step-image {
-    order: -1;
+    order: +1;
+}
+
+.testimonials-container{
+    h2{
+        font-size: 24px;
+    }
+}
+
+.testimonial-image{
+    width: 80vw;
+}
+
+.testimonial-text{
+    width: 80vw;
+}
+
+.testimonial-quote{
+    font-size: 20px;
+}
+
+.testimonial-author{
+    font-size: 16px;
+}
+
+.testimonial.active{
+    flex-direction: column;
+    width: 80vw;
+    gap: 5vh;
+}
+
+.testimonial-image{
+    width: 80vw;
+}
+
+.testimonial-quote{
+    font-size: 16px;
+    /* font-style: italic;
+    font-weight: 400;
+    text-align: left;
+    color: var(--secondary-dark);
+    margin: 0; */
+}
+
+.testimonial-author{
+    font-size: 16px;
 }
