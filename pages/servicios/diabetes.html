@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../../styles/fonts.css">
     <script src="https://kit.fontawesome.com/a5c4f7a4d5.js" crossorigin="anonymous"></script> <!-- Font awesome for icons-->
     <link rel="stylesheet" href="../../styles/base.css">
+    <link rel="stylesheet" href="../../styles/base-mobile.css" media="(max-width: 600px)">
     <link rel="stylesheet" href="../../styles/servicio.css">
+    <link rel="stylesheet" href="../../styles/servicio-mobile.css" media="(max-width: 600px)">
     <script src="../../scripts/base.js" defer></script>
 </head>
 <body>
@@ -33,6 +35,32 @@
             <p class="service-tab" data-page="diabetes">Diabetes</p>
             <p class="service-tab" data-page="cineantropometria">Cineantropometría</p>
         </div>
+    </div>
+    <div class="header-mobile">
+        <div class="logo-container">
+            <img class="logo" src="../../images/logo3.svg" alt="Libreros nutricion">
+            <img class="logo-letters" src="../../images/al-logotipo.svg" alt="Alfonso Libreros Nutriologo">
+        </div>
+        <div class="menu-mobile">
+                <i class="fa-solid fa-bars active"></i>
+                <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="dropdown-mobile">
+        <div class="tab" data-page="index">Inicio</div>
+        <div class="tab"><span class="arrow"><i class="fa-regular fa-square-caret-down"></i></span>Servicios</div>
+        <div class="service-tabs">
+            <p class="tab" data-page="servicios">Todos</p>
+            <p class="tab" data-page="servicios/nutricion-clinica">Nutrición clínica</p>
+            <p class="tab" data-page="servicios/perdida-y-control-de-peso">Pérdida y control de peso</p>
+            <p class="tab" data-page="servicios/nutricion-deportiva">Nutrición deportiva</p>
+            <p class="tab" data-page="servicios/planes-de-entrenamiento">Planes de entrenamiento</p>
+            <p class="tab" data-page="servicios/diabetes">Diabetes</p>
+            <p class="tab" data-page="servicios/cineantropometria">Cineantropometría</p>
+        </div>
+        <div class="tab" data-page="precios">Precios</div>
+        <div class="tab" data-page="dr-libreros">Dr. Libreros</div>
+        <div class="tab" data-page="contacto">Contacto</div>
     </div>
 
     <div class="description-container">
@@ -124,7 +152,7 @@
     <div class="footer-container">
         <div class="footer">
             <img class="logo" src="../../images/logo3.svg" alt="Libreros nutricion">
-            <div class="title">ALFONSO LIBREROS NUTRIOLOGO</div>
+            <img class="logo-letters" src="../../images/al-logotipo.svg" alt="Alfonso Libreros Nutriologo">
         </div>
         <p>© 2024 EL Diseño</p>
         <div class="sns">
