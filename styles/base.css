@@ -71,6 +71,10 @@ body{
     font-weight: 700;
 }
 
+.header-mobile{
+    display: none;
+}
+
 .cta-container{
     padding: 15vh 20vw;
     display: flex;
@@ -122,6 +126,10 @@ body{
     gap: 2vw;
     .logo{
         width: 30px;
+        height: 30px;
+    }
+    .logo-letters{
+        height: 24px;
     }
 }
 
@@ -177,7 +185,7 @@ a{
 
 /* Dropdown arrow */
 .arrow{
-    margin-left: 10px;
+    margin-right: 10px;
 }
 /*
 Make the .dropdown menu container to slightly overlap the menu item 'servicios'
@@ -234,4 +242,8 @@ is still displayed.
 .service-tab:hover{
     color: var(--bg-light);
     cursor: pointer;
+}
+
+.dropdown-mobile{
+    display: none;
 }

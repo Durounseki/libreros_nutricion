@@ -125,3 +125,49 @@ dropdownContainer.addEventListener('mouseout', (event) => {
         dropdownMenu.classList.remove('show');
     }
 });
+
+//Mobile menu
+const mobileMenuIcon = document.querySelector(".fa-bars");
+const mobileMenuCloseIcon = document.querySelector(".fa-xmark");
+mobileMenuIcon.addEventListener('click',showMobileMenu);
+mobileMenuCloseIcon.addEventListener('click',hideMobileMenu);
+const dropdownMobile = document.querySelector(".dropdown-mobile");
+
+function showMobileMenu(){
+    transformIcon();
+    dropdownMobile.classList.toggle("show");
+}
+
+function hideMobileMenu(){
+    transformIcon();
+    dropdownMobile.classList.toggle("show");
+}
+
+function transformIcon(){
+    mobileMenuIcon.classList.toggle("active");
+    mobileMenuCloseIcon.classList.toggle("active");
+}
+
+const mobileMenuTabs = document.querySelectorAll(".tab");
+mobileMenuTabs[1].addEventListener('click',showServices);
+const mobileServiceTabs = document.querySelector(".service-tabs")
+
+function showServices(event){
+    const container = event.target.closest("div");
+    const caret = container.querySelector("i");
+    if(caret.classList.contains("fa-square-caret-down")){
+        caret.classList.remove("fa-square-caret-down");
+        caret.classList.add("fa-square-caret-up");
+    }else if(caret.classList.contains("fa-square-caret-up")){
+        caret.classList.remove("fa-square-caret-up");
+        caret.classList.add("fa-square-caret-down");
+    }
+    mobileServiceTabs.classList.toggle("show");
+}
+
+mobileMenuTabs.forEach(tab => {
+    if(tab.dataset.page){
+        tab.addEventListener('click',pageRedirect);
+    }
+});
+
