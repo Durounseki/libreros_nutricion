@@ -125,11 +125,11 @@ body{
     justify-content: center;
     gap: 2vw;
     .logo{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
     .logo-letters{
-        height: 24px;
+        height: 32px;
     }
 }
 

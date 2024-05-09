@@ -1,0 +1,38 @@
+.details-container{
+    margin-top: 12vh;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.clinic-details{
+    text-align: center;
+    padding: 0 2vw;
+    padding-top: 3vh;
+    padding-bottom: 10vh;
+}
+
+.clinic-details h1{
+    font-size: 48px;
+}
+
+.phone, .address{
+    gap: 2vw;
+    font-size: 16px;
+    justify-content: center;
+}
+
+.phone{
+    margin-top: 0;
+    p{
+        width: auto;
+    }
+}
+
+.address p{
+    width: calc(100% - 40px);
+    margin: 0;
+}
+
+.form-container{
+    padding-bottom: 5vh;
+}
