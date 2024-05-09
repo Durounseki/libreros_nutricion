@@ -1,0 +1,68 @@
+.introduction-container{
+    padding-top: 12vh;
+    flex-direction: column;
+    gap: 5vh;
+    width: 98vw;
+    padding-bottom: 10vh;
+}
+
+.introduction{
+    width: 80vw;
+    text-align: center;
+}
+
+.intro-image{
+    width: 70vw;
+    order: -1;
+}
+
+.booking-button{
+    margin: 2vh auto;
+}
+
+.services-container{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    h2{
+        font-size: 24px;
+        text-align: center;
+    }
+    h3{
+        font-size: 20px;
+        margin-bottom: 2vh;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+
+.services{
+    align-items: center;
+}
+
+.service{
+    flex-direction: column;
+    width: 80vw;
+    gap: 5vh;
+}
+
+.service-text{
+    width: 80vw;
+    text-align: center;
+}
+
+.service-image {
+    width: 80vw;
+    height: calc( 80vw * 2 / 3);
+}
+
+.services-container .service:nth-child(odd) .service-image {
+    order: +1;
+}
+
+.service-learn-more{
+    margin: 3vh auto;
+}
