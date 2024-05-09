@@ -1,10 +1,18 @@
 .confirmation-container{
-    margin-top: 35vh;
+    padding-top: 35vh;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     gap: 2vh;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 600px){
+  .confirmation-container{
+    padding-top: 25vh;
+  }
 }
 
 .check-mark{

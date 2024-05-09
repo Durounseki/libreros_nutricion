@@ -85,8 +85,9 @@ function getActivePage(){
 
     let pageName = lastPart.slice(0, - 5); //Remove .html extension
     const activeMenuItem = menuItems[menuKeys[pageName]];
-    activeMenuItem.classList.add("active");
-
+    if(activeMenuItem){
+        activeMenuItem.classList.add("active");
+    }
 }
 
 getActivePage();

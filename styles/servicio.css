@@ -80,3 +80,7 @@
     font-size: 24px;
     font-weight: 400;
 }
+
+ul{
+    padding-inline-end: 40px;
+}

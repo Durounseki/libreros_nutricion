@@ -10,9 +10,10 @@
 [ ] Fix sticky white space, currently the white space becomes sticky once again, after the first table disappears from the screen
 [ ] Style mobile version
     [x] Style inicio
-    [ ] Style servicios
-        [ ] Style individula services
-    [ ] Style precios
+    [x] Style servicios
+        [x] Style individula services
+    [x] Style precios
     [ ] Style Dr Libreros
     [x] Style contacto
+    [ ] Style confirmacion
 [ ] Choose different images for each service page.
