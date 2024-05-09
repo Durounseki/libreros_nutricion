@@ -158,7 +158,7 @@
     flex-direction: column;
     gap: 10vh;
     width: 100vw;
-    padding: 10vw;
+    padding: 5vh 10vw;
     box-sizing: border-box;
     h2{
         font-size: 36px;

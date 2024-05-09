@@ -1,0 +1,39 @@
+.description-container{
+    padding-top: 12vh;
+    padding-bottom: 5vh;
+    h1{
+        font-size: 36px;
+    }
+}
+
+.service{
+    padding-bottom: 2vh;
+}
+
+.service-image {
+    width: 70vw;
+    height: calc( 70vw * 2 / 3);
+}
+
+.service-summary{
+    padding-top: 0;
+    ul{
+        :nth-child(-n+3){
+            margin-bottom: 2vh;
+        }
+    }
+}
+
+.service-value{
+    h2{
+        font-size: 20px;
+    }
+}
+
+.value-text{
+    font-size: 16px;
+}
+
+.service-summary{
+    font-size: 16px;
+}
