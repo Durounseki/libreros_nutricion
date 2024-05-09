@@ -1,0 +1,26 @@
+.precios-container{
+    width: 98vw;
+    padding-top: 12vh;
+    padding-bottom: 5vh;
+}
+
+.precios-title{
+    text-align: center;
+    margin: 2vh 0;
+}
+
+.white-space.sticky{
+    top: 6vh;
+}
+
+.header-cell.sticky { /* Add a class to the row containing the header cells */
+    top: 12vh;
+}
+
+.separator-container.sticky{
+    top: calc(20vh + 20px);
+}
+
+.pricing-grid {
+    grid-template-columns: repeat(3,minmax(120px,1fr));  /* Two equal columns */
+}
