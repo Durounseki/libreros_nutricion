@@ -111,7 +111,7 @@ i.fa-xmark{
     text-align: right;
     gap: min(2vh,10px);
     transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
-    transform: translateX(70vw);
+    transform: translateX(72vw);
     opacity: 0;
 }
 

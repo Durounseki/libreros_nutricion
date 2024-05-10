@@ -35,4 +35,12 @@
 
 .form-container{
     padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.patient-details{
+    max-width: 80vw;
 }

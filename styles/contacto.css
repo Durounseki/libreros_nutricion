@@ -52,7 +52,6 @@
     padding: 5vh 2vw;
     border-radius: 10px;
     margin-bottom: 2vh;
-
 }
 
 #details{
@@ -173,4 +172,13 @@ input::placeholder{
 
 #result{
     text-align: center;
+}
+
+.credit{
+    text-align: right;
+    font-size: smaller;
+    padding-bottom: 2vh;
+    a{
+        color: var(--accent-color);
+    }
 }
