@@ -1,0 +1,21 @@
+.main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & img {
+      width: 60px;
+    }
+  }
+  & nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
