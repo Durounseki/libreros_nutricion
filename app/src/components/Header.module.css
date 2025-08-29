@@ -1,23 +1,49 @@
 .main-header {
+  padding: 16px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: sticky;
+  background-color: white;
   top: 0;
   .banner {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 
     & img {
       width: 60px;
     }
   }
   & nav {
+    padding-top: 8px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    & a {
+      color: var(--secondary-dark);
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+    }
+    a.active {
+      font-weight: 800;
+      color: var(--accent-color);
+    }
+    a:hover {
+      color: var(--bg-light);
+      cursor: pointer;
+    }
+    a:nth-child(-n + 4) {
+      border-right: solid var(--secondary-dark);
+    }
+  }
+  & h1 {
+    color: var(--bg-dark);
+    font-weight: 900;
   }
 }
