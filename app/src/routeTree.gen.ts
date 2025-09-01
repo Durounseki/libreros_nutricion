@@ -9,18 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServiciosRouteImport } from './routes/servicios'
 import { Route as PreciosRouteImport } from './routes/precios'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as ConfirmacionRouteImport } from './routes/confirmacion'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServiciosIndexRouteImport } from './routes/servicios/index'
+import { Route as ServiciosNutricionClinicaRouteImport } from './routes/servicios/$nutricion-clinica'
 
-const ServiciosRoute = ServiciosRouteImport.update({
-  id: '/servicios',
-  path: '/servicios',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PreciosRoute = PreciosRouteImport.update({
   id: '/precios',
   path: '/precios',
@@ -46,6 +42,17 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiciosIndexRoute = ServiciosIndexRouteImport.update({
+  id: '/servicios/',
+  path: '/servicios/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciosNutricionClinicaRoute =
+  ServiciosNutricionClinicaRouteImport.update({
+    id: '/servicios/$nutricion-clinica',
+    path: '/servicios/$nutricion-clinica',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -53,7 +60,8 @@ export interface FileRoutesByFullPath {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
-  '/servicios': typeof ServiciosRoute
+  '/servicios/$nutricion-clinica': typeof ServiciosNutricionClinicaRoute
+  '/servicios': typeof ServiciosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +69,8 @@ export interface FileRoutesByTo {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
-  '/servicios': typeof ServiciosRoute
+  '/servicios/$nutricion-clinica': typeof ServiciosNutricionClinicaRoute
+  '/servicios': typeof ServiciosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +79,8 @@ export interface FileRoutesById {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
-  '/servicios': typeof ServiciosRoute
+  '/servicios/$nutricion-clinica': typeof ServiciosNutricionClinicaRoute
+  '/servicios/': typeof ServiciosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,9 +90,17 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
+    | '/servicios/$nutricion-clinica'
     | '/servicios'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/confirmacion' | '/contacto' | '/precios' | '/servicios'
+  to:
+    | '/'
+    | '/about'
+    | '/confirmacion'
+    | '/contacto'
+    | '/precios'
+    | '/servicios/$nutricion-clinica'
+    | '/servicios'
   id:
     | '__root__'
     | '/'
@@ -90,7 +108,8 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
-    | '/servicios'
+    | '/servicios/$nutricion-clinica'
+    | '/servicios/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -99,18 +118,12 @@ export interface RootRouteChildren {
   ConfirmacionRoute: typeof ConfirmacionRoute
   ContactoRoute: typeof ContactoRoute
   PreciosRoute: typeof PreciosRoute
-  ServiciosRoute: typeof ServiciosRoute
+  ServiciosNutricionClinicaRoute: typeof ServiciosNutricionClinicaRoute
+  ServiciosIndexRoute: typeof ServiciosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/servicios': {
-      id: '/servicios'
-      path: '/servicios'
-      fullPath: '/servicios'
-      preLoaderRoute: typeof ServiciosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/precios': {
       id: '/precios'
       path: '/precios'
@@ -146,6 +159,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicios/': {
+      id: '/servicios/'
+      path: '/servicios'
+      fullPath: '/servicios'
+      preLoaderRoute: typeof ServiciosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios/$nutricion-clinica': {
+      id: '/servicios/$nutricion-clinica'
+      path: '/servicios/$nutricion-clinica'
+      fullPath: '/servicios/$nutricion-clinica'
+      preLoaderRoute: typeof ServiciosNutricionClinicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -155,7 +182,8 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmacionRoute: ConfirmacionRoute,
   ContactoRoute: ContactoRoute,
   PreciosRoute: PreciosRoute,
-  ServiciosRoute: ServiciosRoute,
+  ServiciosNutricionClinicaRoute: ServiciosNutricionClinicaRoute,
+  ServiciosIndexRoute: ServiciosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
