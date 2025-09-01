@@ -1,0 +1,182 @@
+.precios-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 32px;
+}
+
+.pricing-grid {
+  background-color: #f5f7fb;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  align-items: center;
+  box-shadow: 0px 5px 5px lightgray;
+}
+
+.header-text {
+  background-color: #f5f7fb;
+  height: 20px;
+  padding: 0 10px;
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+  font-weight: bold;
+}
+
+:nth-child(1 of .header-cell) .header-text,
+.row-label {
+  padding-left: 5vw;
+  border-radius: 20px 0 0 0;
+}
+:nth-child(3 of .header-cell) .header-text,
+.price-cell {
+  padding-right: 5vw;
+  border-radius: 0 20px 0 0;
+}
+
+:nth-child(2 of .header-cell) {
+  text-align: left;
+}
+:nth-child(3 of .header-cell) {
+  text-align: right;
+}
+
+.row-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  & a {
+    text-decoration: none;
+  }
+}
+
+:nth-child(1 of .row-label) {
+  grid-row: 3 / 9;
+}
+:nth-child(2 of .row-label) {
+  grid-row: 10 / 16;
+}
+:nth-child(3 of .row-label) {
+  grid-row: 17 / 23;
+}
+:nth-child(4 of .row-label) {
+  grid-row: 24 / 30;
+}
+
+.service-title {
+  padding: 10px;
+  padding-right: 5vw;
+  padding-bottom: 30px;
+  grid-column: 2 / 4;
+}
+
+.empty-cell {
+  padding: 10px;
+  grid-column: 2 / 4;
+}
+
+.service-cell {
+  padding: 10px;
+  text-align: left;
+  grid-column-start: 2;
+}
+
+.price-cell {
+  padding: 10px;
+  text-align: right;
+  grid-column-start: 3;
+  padding-right: 5vw;
+}
+
+.separator-container {
+  background: #f5f7fb;
+  padding: 2vh 5vw;
+  display: flex;
+  justify-content: center;
+  grid-column: 1 / 4;
+}
+.separator {
+  background-color: lightgray;
+  height: 1px;
+  width: 100%;
+}
+
+.footnote {
+  text-align: left;
+  font-size: smaller;
+  grid-column: 1 / 4;
+  padding: 0 5vw;
+}
+
+#footnote1 {
+  padding-top: 8px;
+  scroll-margin-top: 30vh;
+}
+#footnote2 {
+  padding-bottom: 32px;
+  scroll-margin-top: 30vh;
+}
+#footnote3 {
+  padding-top: 3vh;
+  scroll-margin-top: 30vh;
+}
+
+.booking-button {
+  font-size: 18px;
+  display: inline-block;
+  justify-self: center;
+  padding: 14px 23px;
+  background-color: var(--bg-light);
+  color: white;
+  border-radius: 23px;
+  margin-right: auto;
+  margin-top: 3vh;
+}
+
+.booking-button:hover {
+  transform: scale(1.05);
+}
+
+sup a {
+  color: black;
+}
+
+.promociones-container {
+  padding-top: 10vh;
+}
+
+.promociones {
+  display: flex;
+  max-width: 750px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5f7fb;
+  border-radius: 20px;
+  justify-content: center;
+  box-shadow: 0px 5px 5px lightgray;
+  padding-bottom: 5vh;
+}
+
+.promociones-title {
+  padding: 0 5vw;
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+  font-weight: 700;
+}
+.promociones-text {
+  padding: 10px 0;
+  padding-left: 10vw;
+  padding-right: 5vw;
+}
+
+li {
+  padding: 10px;
+}
+
+.precios-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--secondary-dark);
+  margin: 5vh 0;
+}

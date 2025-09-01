@@ -126,7 +126,7 @@ a {
   color: #1f2937;
 }
 
-:focus {
+input:focus {
   border: solid #3882f6;
 }
 
