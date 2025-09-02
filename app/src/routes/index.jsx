@@ -147,10 +147,12 @@ function Index() {
         <div className={styles.testimonials}></div>
       </section>
       <section className={styles["cta-container"]}>
-        <h2>¡Reserva tu consulta hoy!</h2>
-        <Link className={styles["booking-button"]} to="/contacto">
-          Agenda tu cita
-        </Link>
+        <div className={styles.cta}>
+          <h2>¡Reserva tu consulta hoy!</h2>
+          <Link className={styles["booking-button"]} to="/contacto">
+            Agenda tu cita
+          </Link>
+        </div>
       </section>
     </main>
   );

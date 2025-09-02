@@ -7,6 +7,7 @@ import PlanesEntrenamiento from "../assets/pexels-victorfreitas-2261482.jpg";
 
 const serviciosData = {
   cineantropometria: {
+    id: "cineantropometria",
     subtitle: "Conoce tu cuerpo a fondo",
     title: "Cineantropometría",
     image: {
@@ -79,6 +80,7 @@ const serviciosData = {
     },
   },
   diabetes: {
+    id: "diabetes",
     subtitle: "Empoderándote para el control de la diabetes",
     title: "Educación en Diabetes",
     image: {
@@ -152,6 +154,7 @@ const serviciosData = {
   },
 
   "nutricion-clinica": {
+    id: "nutricion-clinica",
     subtitle: "Tu camino hacia una salud integral",
     title: "Nutrición Clínica",
     image: {
@@ -208,6 +211,7 @@ const serviciosData = {
   },
 
   "nutricion-deportiva": {
+    id: "nutricion-deportiva",
     subtitle: "Eleva tu rendimiento y alcanza tus metas",
     title: "Nutrición Deportiva",
     image: {
@@ -273,6 +277,7 @@ const serviciosData = {
   },
 
   "control-de-peso": {
+    id: "control-de-peso",
     subtitle: "Alcanza tu peso saludable y mantenlo",
     title: "Pérdida y Control de Peso",
     image: {
@@ -334,6 +339,7 @@ const serviciosData = {
   },
 
   "planes-de-entrenamiento": {
+    id: "planes-de-entrenamiento",
     subtitle: "Cuerpo y mente en sinergia",
     title: "Planes de Entrenamiento",
     image: {

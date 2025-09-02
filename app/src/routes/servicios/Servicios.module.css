@@ -60,6 +60,7 @@
   border-radius: 23px;
   margin-right: auto;
   margin-top: 3vh;
+  text-decoration: none;
 }
 
 .booking-button:hover {
@@ -148,6 +149,7 @@
   border-radius: 23px;
   margin-right: auto;
   margin-top: 8px;
+  text-decoration: none;
 }
 
 .service-learn-more:hover {
@@ -158,22 +160,27 @@
 }
 
 .cta-container {
-  background-color: var(--bg-light);
-  border-radius: 0 40px 0 40px;
   display: flex;
-  padding: 16px 32px;
-  flex-direction: column;
-  align-content: center;
-  gap: 24px;
-  h2 {
-    font-size: 48px;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-    text-align: center;
-  }
-  .booking-button {
-    margin: 0 auto;
-    background-color: var(--bg-dark);
+  justify-content: center;
+  .cta {
+    background-color: var(--bg-light);
+    width: 80%;
+    border-radius: 0 40px 0 40px;
+    display: flex;
+    padding: 16px 32px;
+    flex-direction: column;
+    align-content: center;
+    gap: 32px;
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+      text-align: center;
+    }
+    .booking-button {
+      margin: 0 auto;
+      background-color: var(--bg-dark);
+    }
   }
 }

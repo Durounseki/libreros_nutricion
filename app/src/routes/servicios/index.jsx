@@ -50,9 +50,12 @@ function RouteComponent() {
                 alimentación efectivo y guiarte hacia el éxito en tus metas de
                 salud.
               </p>
-              <div className={styles["service-learn-more"]}>
+              <Link
+                className={styles["service-learn-more"]}
+                to="/servicios/nutricion-clinica"
+              >
                 ¡Descubre todos los beneficios!
-              </div>
+              </Link>
             </div>
           </div>
           <div className={styles.service}>
@@ -65,9 +68,12 @@ function RouteComponent() {
                 personalizadas y apoyo continuo. Mejora tu salud, autoestima y
                 calidad de vida con un plan nutricional diseñado para ti.
               </p>
-              <div className={styles["service-learn-more"]}>
+              <Link
+                className={styles["service-learn-more"]}
+                to="/servicios/control-de-peso"
+              >
                 ¡Descubre todos los beneficios!
-              </div>
+              </Link>
             </div>
             <img
               src={ControlDePeso}
@@ -89,9 +95,12 @@ function RouteComponent() {
                 potencia tu desempeño y supera a la competencia con una
                 nutrición estratégica.
               </p>
-              <div className={styles["service-learn-more"]}>
+              <Link
+                className={styles["service-learn-more"]}
+                to="/servicios/nutricion-deportiva"
+              >
                 ¡Descubre todos los beneficios!
-              </div>
+              </Link>
             </div>
           </div>
           <div className={styles.service}>
@@ -105,9 +114,12 @@ function RouteComponent() {
                 herramientas para alcanzar tus objetivos físicos y potenciar tu
                 bienestar.
               </p>
-              <div className={styles["service-learn-more"]}>
+              <Link
+                className={styles["service-learn-more"]}
+                to="/servicios/planes-de-entrenamiento"
+              >
                 ¡Descubre todos los beneficios!
-              </div>
+              </Link>
             </div>
             <img
               src={PlanesDeEntrenamiento}
@@ -129,9 +141,12 @@ function RouteComponent() {
                 orientación individualizada para aprender a manejar tus niveles
                 de azúcar y prevenir complicaciones.
               </p>
-              <div className={styles["service-learn-more"]}>
+              <Link
+                className={styles["service-learn-more"]}
+                to="/servicios/diabetes"
+              >
                 ¡Descubre todos los beneficios!
-              </div>
+              </Link>
             </div>
           </div>
           <div className={styles.service}>
@@ -143,19 +158,24 @@ function RouteComponent() {
                 cuerpo cambia con el tiempo y el esfuerzo a través de mediciones
                 precisas de composición corporal.
               </p>
-              <div className={styles["service-learn-more"]}>
+              <Link
+                className={styles["service-learn-more"]}
+                to="/servicios/cineantropometria"
+              >
                 ¡Descubre todos los beneficios!
-              </div>
+              </Link>
             </div>
             <img src={Cineantropometria} alt="Cineantropometría" />
           </div>
         </div>
       </section>
       <section className={styles["cta-container"]}>
-        <h2>¡Reserva tu consulta hoy!</h2>
-        <Link className={styles["booking-button"]} to="/contacto">
-          Agenda tu cita
-        </Link>
+        <div className={styles.cta}>
+          <h2>¡Reserva tu consulta hoy!</h2>
+          <Link className={styles["booking-button"]} to="/contacto">
+            Agenda tu cita
+          </Link>
+        </div>
       </section>
     </main>
   );
