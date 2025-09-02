@@ -15,7 +15,12 @@ import { Route as ConfirmacionRouteImport } from './routes/confirmacion'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServiciosIndexRouteImport } from './routes/servicios/index'
+import { Route as ServiciosPlanesDeEntrenamientoRouteImport } from './routes/servicios/$planes-de-entrenamiento'
+import { Route as ServiciosNutricionDeportivaRouteImport } from './routes/servicios/$nutricion-deportiva'
 import { Route as ServiciosNutricionClinicaRouteImport } from './routes/servicios/$nutricion-clinica'
+import { Route as ServiciosDiabetesRouteImport } from './routes/servicios/$diabetes'
+import { Route as ServiciosControlDePesoRouteImport } from './routes/servicios/$control-de-peso'
+import { Route as ServiciosCineantropometriaRouteImport } from './routes/servicios/$cineantropometria'
 
 const PreciosRoute = PreciosRouteImport.update({
   id: '/precios',
@@ -47,10 +52,38 @@ const ServiciosIndexRoute = ServiciosIndexRouteImport.update({
   path: '/servicios/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiciosPlanesDeEntrenamientoRoute =
+  ServiciosPlanesDeEntrenamientoRouteImport.update({
+    id: '/servicios/$planes-de-entrenamiento',
+    path: '/servicios/$planes-de-entrenamiento',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServiciosNutricionDeportivaRoute =
+  ServiciosNutricionDeportivaRouteImport.update({
+    id: '/servicios/$nutricion-deportiva',
+    path: '/servicios/$nutricion-deportiva',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServiciosNutricionClinicaRoute =
   ServiciosNutricionClinicaRouteImport.update({
     id: '/servicios/$nutricion-clinica',
     path: '/servicios/$nutricion-clinica',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServiciosDiabetesRoute = ServiciosDiabetesRouteImport.update({
+  id: '/servicios/$diabetes',
+  path: '/servicios/$diabetes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciosControlDePesoRoute = ServiciosControlDePesoRouteImport.update({
+  id: '/servicios/$control-de-peso',
+  path: '/servicios/$control-de-peso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciosCineantropometriaRoute =
+  ServiciosCineantropometriaRouteImport.update({
+    id: '/servicios/$cineantropometria',
+    path: '/servicios/$cineantropometria',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -60,7 +93,12 @@ export interface FileRoutesByFullPath {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
+  '/servicios/$cineantropometria': typeof ServiciosCineantropometriaRoute
+  '/servicios/$control-de-peso': typeof ServiciosControlDePesoRoute
+  '/servicios/$diabetes': typeof ServiciosDiabetesRoute
   '/servicios/$nutricion-clinica': typeof ServiciosNutricionClinicaRoute
+  '/servicios/$nutricion-deportiva': typeof ServiciosNutricionDeportivaRoute
+  '/servicios/$planes-de-entrenamiento': typeof ServiciosPlanesDeEntrenamientoRoute
   '/servicios': typeof ServiciosIndexRoute
 }
 export interface FileRoutesByTo {
@@ -69,7 +107,12 @@ export interface FileRoutesByTo {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
+  '/servicios/$cineantropometria': typeof ServiciosCineantropometriaRoute
+  '/servicios/$control-de-peso': typeof ServiciosControlDePesoRoute
+  '/servicios/$diabetes': typeof ServiciosDiabetesRoute
   '/servicios/$nutricion-clinica': typeof ServiciosNutricionClinicaRoute
+  '/servicios/$nutricion-deportiva': typeof ServiciosNutricionDeportivaRoute
+  '/servicios/$planes-de-entrenamiento': typeof ServiciosPlanesDeEntrenamientoRoute
   '/servicios': typeof ServiciosIndexRoute
 }
 export interface FileRoutesById {
@@ -79,7 +122,12 @@ export interface FileRoutesById {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
+  '/servicios/$cineantropometria': typeof ServiciosCineantropometriaRoute
+  '/servicios/$control-de-peso': typeof ServiciosControlDePesoRoute
+  '/servicios/$diabetes': typeof ServiciosDiabetesRoute
   '/servicios/$nutricion-clinica': typeof ServiciosNutricionClinicaRoute
+  '/servicios/$nutricion-deportiva': typeof ServiciosNutricionDeportivaRoute
+  '/servicios/$planes-de-entrenamiento': typeof ServiciosPlanesDeEntrenamientoRoute
   '/servicios/': typeof ServiciosIndexRoute
 }
 export interface FileRouteTypes {
@@ -90,7 +138,12 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
+    | '/servicios/$cineantropometria'
+    | '/servicios/$control-de-peso'
+    | '/servicios/$diabetes'
     | '/servicios/$nutricion-clinica'
+    | '/servicios/$nutricion-deportiva'
+    | '/servicios/$planes-de-entrenamiento'
     | '/servicios'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,7 +152,12 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
+    | '/servicios/$cineantropometria'
+    | '/servicios/$control-de-peso'
+    | '/servicios/$diabetes'
     | '/servicios/$nutricion-clinica'
+    | '/servicios/$nutricion-deportiva'
+    | '/servicios/$planes-de-entrenamiento'
     | '/servicios'
   id:
     | '__root__'
@@ -108,7 +166,12 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
+    | '/servicios/$cineantropometria'
+    | '/servicios/$control-de-peso'
+    | '/servicios/$diabetes'
     | '/servicios/$nutricion-clinica'
+    | '/servicios/$nutricion-deportiva'
+    | '/servicios/$planes-de-entrenamiento'
     | '/servicios/'
   fileRoutesById: FileRoutesById
 }
@@ -118,7 +181,12 @@ export interface RootRouteChildren {
   ConfirmacionRoute: typeof ConfirmacionRoute
   ContactoRoute: typeof ContactoRoute
   PreciosRoute: typeof PreciosRoute
+  ServiciosCineantropometriaRoute: typeof ServiciosCineantropometriaRoute
+  ServiciosControlDePesoRoute: typeof ServiciosControlDePesoRoute
+  ServiciosDiabetesRoute: typeof ServiciosDiabetesRoute
   ServiciosNutricionClinicaRoute: typeof ServiciosNutricionClinicaRoute
+  ServiciosNutricionDeportivaRoute: typeof ServiciosNutricionDeportivaRoute
+  ServiciosPlanesDeEntrenamientoRoute: typeof ServiciosPlanesDeEntrenamientoRoute
   ServiciosIndexRoute: typeof ServiciosIndexRoute
 }
 
@@ -166,11 +234,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiciosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicios/$planes-de-entrenamiento': {
+      id: '/servicios/$planes-de-entrenamiento'
+      path: '/servicios/$planes-de-entrenamiento'
+      fullPath: '/servicios/$planes-de-entrenamiento'
+      preLoaderRoute: typeof ServiciosPlanesDeEntrenamientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios/$nutricion-deportiva': {
+      id: '/servicios/$nutricion-deportiva'
+      path: '/servicios/$nutricion-deportiva'
+      fullPath: '/servicios/$nutricion-deportiva'
+      preLoaderRoute: typeof ServiciosNutricionDeportivaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicios/$nutricion-clinica': {
       id: '/servicios/$nutricion-clinica'
       path: '/servicios/$nutricion-clinica'
       fullPath: '/servicios/$nutricion-clinica'
       preLoaderRoute: typeof ServiciosNutricionClinicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios/$diabetes': {
+      id: '/servicios/$diabetes'
+      path: '/servicios/$diabetes'
+      fullPath: '/servicios/$diabetes'
+      preLoaderRoute: typeof ServiciosDiabetesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios/$control-de-peso': {
+      id: '/servicios/$control-de-peso'
+      path: '/servicios/$control-de-peso'
+      fullPath: '/servicios/$control-de-peso'
+      preLoaderRoute: typeof ServiciosControlDePesoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios/$cineantropometria': {
+      id: '/servicios/$cineantropometria'
+      path: '/servicios/$cineantropometria'
+      fullPath: '/servicios/$cineantropometria'
+      preLoaderRoute: typeof ServiciosCineantropometriaRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -182,7 +285,12 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmacionRoute: ConfirmacionRoute,
   ContactoRoute: ContactoRoute,
   PreciosRoute: PreciosRoute,
+  ServiciosCineantropometriaRoute: ServiciosCineantropometriaRoute,
+  ServiciosControlDePesoRoute: ServiciosControlDePesoRoute,
+  ServiciosDiabetesRoute: ServiciosDiabetesRoute,
   ServiciosNutricionClinicaRoute: ServiciosNutricionClinicaRoute,
+  ServiciosNutricionDeportivaRoute: ServiciosNutricionDeportivaRoute,
+  ServiciosPlanesDeEntrenamientoRoute: ServiciosPlanesDeEntrenamientoRoute,
   ServiciosIndexRoute: ServiciosIndexRoute,
 }
 export const routeTree = rootRouteImport
