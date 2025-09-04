@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import LinkButton from "../components/LinkButton";
 import InicioCTA from "../assets/inicio-cta.jpg";
 import StepCita from "../assets/cita.jpg";
 import StepEvaluacion from "../assets/evaluacion2.jpg";
@@ -28,9 +29,9 @@ function Index() {
             necesidades. <b>Agenda tu cita ahora</b> y comienza tu
             transformación.
           </p>
-          <Link className={styles["booking-button"]} to="/contacto">
+          <LinkButton className={styles["booking-button"]} to="/contacto">
             Agenda tu cita
-          </Link>
+          </LinkButton>
         </div>
         <img
           src={InicioCTA}
@@ -149,9 +150,9 @@ function Index() {
       <section className={styles["cta-container"]}>
         <div className={styles.cta}>
           <h2>¡Reserva tu consulta hoy!</h2>
-          <Link className={styles["booking-button"]} to="/contacto">
+          <LinkButton className={styles["booking-button"]} to="/contacto">
             Agenda tu cita
-          </Link>
+          </LinkButton>
         </div>
       </section>
     </main>

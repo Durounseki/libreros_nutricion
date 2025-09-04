@@ -50,8 +50,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 2vh;
-  width: 50vw;
+  gap: 16px;
+  width: 50%;
   text-align: left;
 }
 
@@ -199,6 +199,9 @@
     flex-direction: column-reverse;
     .intro-text {
       width: 100%;
+    }
+    & img {
+      max-width: 80%;
     }
   }
   .main-text {

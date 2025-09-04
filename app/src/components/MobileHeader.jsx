@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LinkButton from "./LinkButton";
 import Logo from "../assets/logo3.svg";
 import Letras from "../assets/al-logotipo.svg";
 import styles from "./MobileHeader.module.css";
@@ -23,20 +24,28 @@ function MobileHeader() {
   };
 
   return (
-    <header className={styles["main-header"]}>
-      <div className={styles.banner}>
-        <img src={Logo} alt="ALN LOGO" />
-        <img src={Letras} alt=" ALFONSO LIBREROS NUTRIOLOGO" />
-      </div>
-      <div className={styles["menu-button"]} onClick={toggleMenu}>
-        <i
-          className={`fa-solid fa-bars ${isMenuOpen ? "" : styles["active-icon"]}`}
-        ></i>
-        <i
-          className={`fa-solid fa-xmark ${isMenuOpen ? styles["active-icon"] : ""}`}
-        ></i>
-      </div>
-      <nav className={isMenuOpen ? styles.open : styles.close}>
+    <>
+      <header className={styles["main-header"]}>
+        <LinkButton to="/" className={styles.banner}>
+          <img src={Logo} alt="ALN LOGO" />
+          <img src={Letras} alt=" ALFONSO LIBREROS NUTRIOLOGO" />
+        </LinkButton>
+        <div className={styles["menu-button"]} onClick={toggleMenu}>
+          <i
+            className={`fa-solid fa-bars ${isMenuOpen ? "" : styles["active-icon"]}`}
+          ></i>
+          <i
+            className={`fa-solid fa-xmark ${isMenuOpen ? styles["active-icon"] : ""}`}
+          ></i>
+        </div>
+      </header>
+      <nav
+        className={
+          styles["mobile-menu"] +
+          " " +
+          (isMenuOpen ? styles.open : styles.close)
+        }
+      >
         <div className={styles["nav-tab"]}>
           <NavLink to="/" styles={styles} onClick={toggleMenu}>
             Inicio
@@ -93,7 +102,7 @@ function MobileHeader() {
           </NavLink>
         </div>
       </nav>
-    </header>
+    </>
   );
 }
 

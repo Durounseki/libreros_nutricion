@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import LinkButton from "./LinkButton";
 import FeatureList from "./FeatureList";
 
 function ServicioLayout({ service, styles }) {
@@ -24,9 +24,9 @@ function ServicioLayout({ service, styles }) {
       <section className={styles["cta-container"]}>
         <div className={styles.cta}>
           <h2>{service.cta.title}</h2>
-          <Link className={styles["booking-button"]} to="/contacto">
+          <LinkButton className={styles["booking-button"]} to="/contacto">
             {service.cta.button}
-          </Link>
+          </LinkButton>
         </div>
       </section>
     </main>

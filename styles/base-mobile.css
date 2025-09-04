@@ -1,145 +1,140 @@
-.logo{
-    width: 50px;
-    height: 50px;
+.logo {
+  width: 50px;
+  height: 50px;
 }
 
-.title{
-    text-align: center;
+.title {
+  text-align: center;
 }
 
-.main-text{
+.main-text {
+  font-size: 24px;
+}
+
+.secondary-text {
+  font-size: 20px;
+}
+
+.small-italic {
+  font-size: 16px;
+}
+
+.small-bold {
+  font-size: 16px;
+}
+
+.cta-container {
+  padding: 5vh 5vw;
+  display: flex;
+}
+
+.cta {
+  border-radius: 0 20px 0 20px;
+  padding: 5vh 5vw;
+  gap: 2vh;
+  h2 {
     font-size: 24px;
-}
-
-.secondary-text{
-    font-size: 20px;
-}
-
-.small-italic{
+  }
+  .booking-button {
     font-size: 16px;
+    padding: 10px 18px;
+    border-radius: 18px;
+  }
 }
 
-.small-bold{
-    font-size: 16px;
+.header-container {
+  display: none;
 }
 
-.cta-container{
-    padding: 5vh 5vw;
-    display: flex;
-    /* justify-content: center; */
+.header-mobile {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  background-color: white;
+  width: 100vw;
+  height: 12vh;
+  padding: 2vh 10vw;
+  box-sizing: border-box;
 }
 
-.cta{
-    border-radius: 0 20px 0 20px;
-    padding: 5vh 5vw;
-    gap: 2vh;
-    h2{
-        font-size: 24px;
-    }
-    .booking-button{
-        font-size: 16px;
-        padding: 10px 18px;
-        border-radius: 18px;
-    }
+.logo-container {
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  padding: 0 2vw;
 }
 
-.header-container{
-    display: none;
+.logo-letters {
+  height: 40px;
 }
 
-.header-mobile{
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 200;
-    top: 0;
-    background-color: white;
-    width: 100vw;
-    height: 12vh;
-    padding: 2vh 10vw;
-    box-sizing: border-box;
+.menu-mobile {
+  justify-self: flex-end;
+  display: flex;
+  font-size: 20px;
+  color: var(--accent-color);
+  padding-right: 2vw;
 }
 
-.logo-container{
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2vw;
-    padding: 0 2vw;
+.menu-mobile i {
+  transition: transform 0.3s ease-in-out;
+  transform: rotateX(90deg);
 }
 
-.logo-letters{
-    height: 40px;
+i.fa-bars {
+  position: relative;
+}
+i.fa-xmark {
+  position: absolute;
 }
 
-.menu-mobile{
-    justify-self: flex-end;
-    display: flex;
-    font-size: 20px;
-    color: var(--accent-color);
-    padding-right: 2vw;
+.menu-mobile i.active {
+  transform: rotateX(0deg);
 }
 
-.menu-mobile i{
-    transition: transform 0.3s ease-in-out;
-    transform: rotateX(90deg);
+.dropdown-mobile {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 12vh;
+  right: 0;
+  height: 88vh;
+  background-color: white;
+  z-index: 151;
+  padding: 0 10vw;
+  padding-top: 2vh;
+  text-align: right;
+  gap: min(2vh, 10px);
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateX(72vw);
+  opacity: 0;
 }
 
-i.fa-bars{
-    position: relative;
-}
-i.fa-xmark{
-    position: absolute;
-}
-
-.menu-mobile i.active{
-    transform: rotateX(0deg);
+.dropdown-mobile.show {
+  display: flex;
+  transform: translateX(0);
+  opacity: 1;
 }
 
-.dropdown-mobile{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 12vh;
-    right: 0;
-    height: 88vh;
-    background-color: white;
-    z-index: 151;
-    padding: 0 10vw;
-    padding-top: 2vh;
-    text-align: right;
-    gap: min(2vh,10px);
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
-    transform: translateX(72vw);
-    opacity: 0;
+.tab {
+  width: 50vw;
+  padding-right: 2vw;
 }
 
-.dropdown-mobile.show{
-    display: flex;
-    transform: translateX(0);
-    opacity: 1;
+.service-tabs {
+  display: none;
+  padding: min(2vh, 10px) 0;
+  p {
+    margin: 0;
+  }
 }
 
-.tab{
-    width: 50vw;
-    padding-right: 2vw;
+.service-tabs.show {
+  display: flex;
+  flex-direction: column;
+  gap: min(2vh, 10px);
 }
-
-.service-tabs{
-    display: none;
-    padding: min(2vh,10px) 0;
-    p{
-        margin: 0;
-    }
-}
-
-.service-tabs.show{
-    display: flex;
-    flex-direction: column;
-    gap: min(2vh,10px);
-}
-
-
-
-
