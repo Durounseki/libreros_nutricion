@@ -1,0 +1,108 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  background-color: white;
+  width: 100%;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  top: 0;
+  .banner {
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    gap: 16px;
+    & img {
+      height: 40px;
+    }
+  }
+  .menu-button {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    & i {
+      font-size: 20px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotateX(90deg) rotateY(90deg);
+      opacity: 0;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    }
+    i.active-icon {
+      transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+  & nav {
+    width: 80%;
+    height: 100dvh;
+    padding: 68px 8px 8px 32px;
+    box-sizing: border-box;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    box-shadow: -2px 0 2px lightgray;
+    transform: translateX(100%);
+    opacity: 0;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    .nav-tab {
+      width: 100%;
+      display: grid;
+      grid-template-rows: max-content 0fr;
+      transition: grid-template-rows 0.3s ease;
+      position: relative;
+      & ul {
+        overflow-y: hidden;
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        li:first-child {
+          padding-top: 16px;
+        }
+        li:last-child {
+          padding-bottom: 16px;
+        }
+      }
+      & a {
+        text-decoration: none;
+        color: var(--secondary-dark);
+      }
+      a.active {
+        font-weight: 800;
+        color: var(--accent-color);
+      }
+    }
+    .nav-tab:has(.active) {
+      .nav-tab-title {
+        font-weight: 800;
+        color: var(--accent-color);
+      }
+    }
+    .nav-tab-title {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      cursor: pointer;
+    }
+    .show {
+      grid-template-rows: max-content 1fr;
+    }
+  }
+  .open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
