@@ -46,6 +46,7 @@
     background-color: white;
     position: absolute;
     display: flex;
+    overflow-y: auto;
     gap: 16px;
     flex-direction: column;
     top: 0;

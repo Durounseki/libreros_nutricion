@@ -28,7 +28,6 @@
 }
 
 .service-container {
-  padding-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -38,14 +37,18 @@
 
 .description {
   text-align: center;
+  padding: 0 32px;
+  box-sizing: border-box;
   & img {
     margin: 32px 0;
     width: 60%;
+    border-radius: 24px;
   }
 }
 
 .summary {
   padding: 0 32px;
+  box-sizing: border-box;
   font-size: 18px;
   & ul {
     padding-inline-end: 40px;
@@ -53,11 +56,15 @@
       margin-bottom: 16px;
     }
   }
+  & h2 {
+    margin-top: 0;
+  }
 }
 
 .service-value {
   background-color: var(--bg-dark);
   padding: 16px 32px;
+  box-sizing: border-box;
   color: var(--secondary-light);
   font-size: 18px;
   h2 {
@@ -111,4 +118,64 @@
 
 .booking-button:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .main-text {
+    font-size: 36px;
+  }
+
+  .secondary-text {
+    font-size: 24px;
+  }
+
+  .small-italic {
+    font-size: 16px;
+  }
+
+  .small-bold {
+    font-size: 16px;
+  }
+  .service-container {
+    text-align: center;
+  }
+  .description {
+    padding: 0 16px;
+    & img {
+      width: 80%;
+      border-radius: 16px;
+    }
+  }
+  .summary {
+    padding: 0 16px;
+    font-size: 16px;
+    & ul {
+      padding: 0 20px;
+      & li {
+        padding: 0;
+      }
+    }
+  }
+  .service-value {
+    padding: 0 16px;
+    font-size: 16px;
+    h2 {
+      font-size: 24px;
+    }
+    & ul {
+      padding: 0 20px;
+      & li {
+        padding: 0;
+      }
+    }
+  }
+  .cta-container {
+    padding: 32px 16px;
+    .cta {
+      h2 {
+        font-size: 24px;
+      }
+      width: 100%;
+    }
+  }
 }

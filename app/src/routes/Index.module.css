@@ -69,7 +69,7 @@
 }
 
 .booking-button:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .value-proposition {
@@ -187,6 +187,90 @@
     .booking-button {
       margin: 0 auto;
       background-color: var(--bg-dark);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    text-align: center;
+  }
+  .intro {
+    flex-direction: column-reverse;
+    .intro-text {
+      width: 100%;
+    }
+  }
+  .main-text {
+    font-size: 24px;
+  }
+
+  .secondary-text {
+    font-size: 20px;
+  }
+
+  .small-italic {
+    font-size: 16px;
+  }
+
+  .small-bold {
+    font-size: 16px;
+  }
+  .booking-button {
+    margin: 0 auto;
+  }
+  .value-proposition {
+    padding: 16px;
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 20px;
+    }
+    ul {
+      font-size: 16px;
+    }
+  }
+  .how-it-works {
+    padding: 32px 16px;
+    gap: 16px;
+    h2 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .step {
+    flex-direction: column;
+    gap: 16px;
+    & img {
+      max-width: 100%;
+      width: 80%;
+    }
+  }
+  .step:nth-child(odd) img {
+    border-radius: 16px;
+  }
+
+  .step:nth-child(even) img {
+    border-radius: 16px;
+    order: -1;
+  }
+  .step-text {
+    width: 100%;
+  }
+  .cta-container {
+    padding: 32px 16px;
+    .cta {
+      h2 {
+        font-size: 24px;
+      }
+      width: 100%;
     }
   }
 }
