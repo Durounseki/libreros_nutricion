@@ -30,8 +30,19 @@ function RouteComponent() {
     e.preventDefault();
     setSubmissionStatus("loading");
 
+    const apiUrl = `${import.meta.env.VITE_API_URL}/api/contact`;
     try {
-      console.log("Form data submitted:", formData);
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server responded with status: ${response.status}`);
+      }
 
       setSubmissionStatus("success");
       setFormData({
@@ -160,18 +171,18 @@ function RouteComponent() {
                     >
                       Elige una opcion
                     </option>
-                    <option value="nutricion-clinica">Nutrición clínica</option>
-                    <option value="control-de-peso">
+                    <option value="Nutrición Clínica">Nutrición clínica</option>
+                    <option value="Control de Peso">
                       Pérdida y control de peso
                     </option>
-                    <option value="nutricion-deportiva">
+                    <option value="Nutrición Deportiva">
                       Nutrición deportiva
                     </option>
-                    <option value="planes-entrenamiento">
+                    <option value="Planes Entrenamiento">
                       Planes de entrenamiento
                     </option>
-                    <option value="educacion-diabetes">Diabetes</option>
-                    <option value="cineantropometria">Cineantropometría</option>
+                    <option value="Educación en Diabetes">Diabetes</option>
+                    <option value="Cineantropometría">Cineantropometría</option>
                   </select>
                 </div>
               </div>
