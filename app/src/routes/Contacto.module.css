@@ -16,6 +16,12 @@
   padding-right: 16px;
 }
 
+.whatsapp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
 .phone,
 .address {
   display: flex;
@@ -25,6 +31,7 @@
   align-items: center;
   & i {
     color: var(--bg-light);
+    font-size: 24px;
   }
 }
 
@@ -172,6 +179,13 @@ input::placeholder {
 
 #result {
   text-align: center;
+}
+
+.google-map {
+  width: 100%;
+  border: none;
+  aspect-ratio: 1.5;
+  margin-bottom: 32px;
 }
 
 @media (max-width: 600px) {
