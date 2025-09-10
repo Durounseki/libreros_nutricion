@@ -6,6 +6,9 @@ import StepEvaluacion from "../assets/evaluacion2.jpg";
 import StepDieta from "../assets/dieta.jpg";
 import StepSoporte from "../assets/soporte.jpg";
 import styles from "./Index.module.css";
+import Review from "../components/Review";
+import reviews from "../data/reviews";
+import Carousel from "../components/Carousel";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -46,24 +49,23 @@ function Index() {
         </h2>
         <p className={styles["value-text"]}>
           Nuestros planes de alimentación están diseñados para ayudarte a:
-          <ul>
-            <li>
-              <b>Alcanzar tu composición corporal ideal</b>: gana músculo y
-              define tu figura
-            </li>
-            <li>
-              <b>Mejorar tu rendimiento físico</b>: aumenta tu energía y
-              vitalidad
-            </li>
-            <li>
-              <b>Tomar mejores decisiones de alimentación</b>: preven o controla
-              enfermedades crónicas
-            </li>
-            <li>
-              <b>¡Ser tu mejor versión!</b>
-            </li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            <b>Alcanzar tu composición corporal ideal</b>: gana músculo y define
+            tu figura
+          </li>
+          <li>
+            <b>Mejorar tu rendimiento físico</b>: aumenta tu energía y vitalidad
+          </li>
+          <li>
+            <b>Tomar mejores decisiones de alimentación</b>: preven o controla
+            enfermedades crónicas
+          </li>
+          <li>
+            <b>¡Ser tu mejor versión!</b>
+          </li>
+        </ul>
       </section>
 
       <section className={styles["how-it-works"]}>
@@ -144,8 +146,12 @@ function Index() {
 
       <section className={styles["testimonials-container"]}>
         <h2>Historias de éxito</h2>
-
-        <div className={styles.testimonials}></div>
+        <Carousel data={reviews} styles={styles} />
+        {/* <div className={styles.testimonials}>
+          {reviews.map((review) => (
+            <Review key={review.id} review={review} styles={styles} />
+          ))}
+        </div> */}
       </section>
       <section className={styles["cta-container"]}>
         <div className={styles.cta}>
