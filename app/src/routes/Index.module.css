@@ -204,6 +204,10 @@
     justify-content: center;
     cursor: pointer;
   }
+  .scroll-button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
   .scroll-button:first-child {
     left: 0;
     top: 50%;
@@ -251,6 +255,23 @@
         text-align: left;
       }
     }
+  }
+}
+.scroll-indices {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  .scroll-index {
+    width: 12px;
+    height: 12px;
+    background-color: var(--secondary-dark);
+    opacity: 0.5;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .scroll-index-active {
+    background-color: var(--accent-color);
+    opacity: 1;
   }
 }
 
