@@ -147,11 +147,15 @@ function Index() {
       <section className={styles["testimonials-container"]}>
         <h2>Historias de éxito</h2>
         <Carousel data={reviews} styles={styles} />
-        {/* <div className={styles.testimonials}>
-          {reviews.map((review) => (
-            <Review key={review.id} review={review} styles={styles} />
-          ))}
-        </div> */}
+        <div className={styles["review-cta"]}>
+          <h3>
+            ¿Eres uno de nuestros pacientes? ¡Nos encantaría leer sobre tu
+            experiencia!
+          </h3>
+          <LinkButton className={styles["review-button"]} to="/review">
+            Escribe tu reseña
+          </LinkButton>
+        </div>
       </section>
       <section className={styles["cta-container"]}>
         <div className={styles.cta}>
