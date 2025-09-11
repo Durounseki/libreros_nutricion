@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ReviewRouteImport } from './routes/review'
 import { Route as PreciosRouteImport } from './routes/precios'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as ConfirmacionRouteImport } from './routes/confirmacion'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServiciosIndexRouteImport } from './routes/servicios/index'
 import { Route as ServiciosServicioIdRouteImport } from './routes/servicios/$servicioId'
 
+const ReviewRoute = ReviewRouteImport.update({
+  id: '/review',
+  path: '/review',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PreciosRoute = PreciosRouteImport.update({
   id: '/precios',
   path: '/precios',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
+  '/review': typeof ReviewRoute
   '/servicios/$servicioId': typeof ServiciosServicioIdRoute
   '/servicios': typeof ServiciosIndexRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
+  '/review': typeof ReviewRoute
   '/servicios/$servicioId': typeof ServiciosServicioIdRoute
   '/servicios': typeof ServiciosIndexRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/confirmacion': typeof ConfirmacionRoute
   '/contacto': typeof ContactoRoute
   '/precios': typeof PreciosRoute
+  '/review': typeof ReviewRoute
   '/servicios/$servicioId': typeof ServiciosServicioIdRoute
   '/servicios/': typeof ServiciosIndexRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
+    | '/review'
     | '/servicios/$servicioId'
     | '/servicios'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
+    | '/review'
     | '/servicios/$servicioId'
     | '/servicios'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/confirmacion'
     | '/contacto'
     | '/precios'
+    | '/review'
     | '/servicios/$servicioId'
     | '/servicios/'
   fileRoutesById: FileRoutesById
@@ -117,12 +129,20 @@ export interface RootRouteChildren {
   ConfirmacionRoute: typeof ConfirmacionRoute
   ContactoRoute: typeof ContactoRoute
   PreciosRoute: typeof PreciosRoute
+  ReviewRoute: typeof ReviewRoute
   ServiciosServicioIdRoute: typeof ServiciosServicioIdRoute
   ServiciosIndexRoute: typeof ServiciosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/review': {
+      id: '/review'
+      path: '/review'
+      fullPath: '/review'
+      preLoaderRoute: typeof ReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/precios': {
       id: '/precios'
       path: '/precios'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmacionRoute: ConfirmacionRoute,
   ContactoRoute: ContactoRoute,
   PreciosRoute: PreciosRoute,
+  ReviewRoute: ReviewRoute,
   ServiciosServicioIdRoute: ServiciosServicioIdRoute,
   ServiciosIndexRoute: ServiciosIndexRoute,
 }

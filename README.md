@@ -3,28 +3,32 @@
 ## To do list
 
 [x] Change "Nuestros planes de alimentación están diseñados para ayudarte a:" for each service.
+[ ] Sanitize contact form data
 [ ] Add email confirmation input.
-[ ] Highlight active tab on dropdown menu
-[ ] Highlight active tab on mobile menu
-[ ] Refactor dropdown menu
+[ ] Add styles
+[x] Highlight active tab on dropdown menu
+[x] Highlight active tab on mobile menu
+[x] Refactor dropdown menu
 [ ] Add profile page
-[ ] Fix sticky white space, currently the white space becomes sticky once again, after the first table disappears from the screen
 [ ] Look for caliper photo that does not require credit
 [ ] Style mobile version
-    [x] Style inicio
-    [x] Style servicios
-        [x] Style individula services
-    [x] Style precios
-    [ ] Style Dr Libreros
-    [x] Style contacto
-    [x] Style confirmacion
-    [ ] Infografias, seccion de educacion.
-[ ] Choose different images for each service page.
+[x] Style inicio
+[x] Style servicios
+[x] Style individula services
+[x] Style precios
+[ ] Style Dr Libreros
+[x] Style contacto
+[x] Style confirmacion
+[ ] Infografias, seccion de educacion.
+[x] Choose different images for each service page.
 [ ] Add links to social media.
 [ ] Add link to github page.
-[ ] Adjust sizes on mobile version to remove page movement on mobile version.
-*[ ] Add profile
-*[ ] Infografias
+[x] Adjust sizes on mobile version to remove page movement on mobile version.
+_[ ] Add profile
+_[ ] Infografias
 [ ] Resultados
 [ ] Testimonials
+[x] Set up carousel
+[ ] Add review page
+[ ] Save review to database
 [ ] Evaluaciones

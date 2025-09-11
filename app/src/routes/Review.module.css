@@ -1,0 +1,167 @@
+.main-text {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--bg-dark);
+  margin: 0;
+}
+
+.secondary-text {
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--secondary-dark);
+  margin: 0;
+}
+
+.small-italic {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.small-bold {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0;
+}
+.review-container {
+  padding: 32px 16px;
+  text-align: center;
+  & h1 {
+    margin-bottom: 32px;
+  }
+}
+.form-container {
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+  form {
+    max-width: 600px;
+    .patient-details {
+      background-color: #f5f7fb;
+      box-shadow: 0 0 5px lightgray;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 32px;
+      & fieldset {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .field {
+      display: flex;
+      justify-content: left;
+      gap: 2vh;
+      flex-wrap: wrap;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-width: 150px;
+    }
+    input,
+    select,
+    textarea {
+      border: solid #e5e7eb;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 18px;
+    }
+
+    legend {
+      font-size: 24px;
+      margin-bottom: 32px;
+      width: 100%;
+      text-align: center;
+    }
+
+    label {
+      font-size: 12px;
+      color: #1f2937;
+      margin-bottom: 1vh;
+    }
+
+    .send-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      color: #1f2937;
+    }
+
+    input:focus {
+      border: solid #3882f6;
+    }
+
+    .valid-input {
+      border: solid #9fd99c;
+    }
+
+    .invalid-input {
+      border: solid #e35d5d;
+    }
+
+    .error {
+      font-size: 10px;
+      color: #e35d5d;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .submit-button {
+      font-size: 18px;
+      display: inline-block;
+      justify-self: center;
+      padding: 14px 23px;
+      background-color: var(--bg-light);
+      color: white;
+      border-radius: 8px;
+      width: 100%;
+      border: none;
+    }
+
+    .submit-button:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+
+    .placeholder {
+      color: gray;
+    }
+
+    input::placeholder {
+      color: gray;
+    }
+
+    #result {
+      text-align: center;
+    }
+  }
+}
+.star-rating {
+  font-size: 20px;
+  display: flex;
+  gap: 8px;
+}
+.selected-star {
+  color: var(--bg-light);
+}
+.add-star {
+  color: var(--bg-light);
+  opacity: 0.5;
+}
+.remove-star {
+  color: #e35d5d;
+  opacity: 0.5;
+}
