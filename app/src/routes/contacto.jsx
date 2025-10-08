@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import styles from "./contacto.module.css";
 import { QRCodeSVG } from "qrcode.react";
+import DOMPurify from "dompurify";
 
 export const Route = createFileRoute("/contacto")({
   component: RouteComponent,
@@ -16,19 +17,56 @@ function RouteComponent() {
     service: "0",
   });
 
+  const [errors, setErrors] = useState({});
   const [submissionStatus, setSubmissionStatus] = useState(null);
+
+  const validate = (data) => {
+    const newErrors = {};
+
+    if (!data.firstName) {
+      newErrors.firstName = "Ingresa tu nombre";
+    }
+    if (!data.lastName) {
+      newErrors.lastName = "Ingresa tus apellidos";
+    }
+
+    if (!data.email) {
+      newErrors.email = "Ingresa tu dirección de correo electrónico";
+    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+      newErrors.email = "Por favor, ingresa una dirección de correo válida";
+    }
+    if (data.phoneNumber && !/^\+?[0-9\s-]{10,18}$/.test(data.phoneNumber)) {
+      newErrors.phoneNumber =
+        "Usa 10 dígitos. Para números internacionales, incluye el código de país (ej. +52).";
+    }
+    if (data.service === "0") {
+      newErrors.service = "Elige un tipo de consulta";
+    }
+    return newErrors;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    const updatedFormData = { ...formData, [name]: value };
+    setFormData(updatedFormData);
+    setErrors(validate(updatedFormData));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const finalErrors = validate(formData);
+    setErrors(finalErrors);
+    if (Object.keys(finalErrors).length > 0) {
+      return;
+    }
     setSubmissionStatus("loading");
+    const sanitizedData = {
+      firstName: DOMPurify.sanitize(formData.firstName),
+      lastName: DOMPurify.sanitize(formData.lastName),
+      email: DOMPurify.sanitize(formData.email),
+      phoneNumber: DOMPurify.sanitize(formData.phoneNumber),
+      service: formData.service,
+    };
 
     const apiUrl = `${import.meta.env.VITE_API_URL}/api/contact`;
     try {
@@ -37,7 +75,7 @@ function RouteComponent() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(sanitizedData),
       });
 
       if (!response.ok) {
@@ -52,10 +90,16 @@ function RouteComponent() {
         phoneNumber: "",
         service: "0",
       });
+      setErrors({});
     } catch (error) {
       console.error("Submission failed:", error);
       setSubmissionStatus("error");
     }
+  };
+
+  const getInputClass = (fieldname) => {
+    if (!formData[fieldname] && !errors[fieldname]) return "";
+    return errors[fieldname] ? styles["invalid-input"] : styles["valid-input"];
   };
 
   return (
@@ -92,7 +136,7 @@ function RouteComponent() {
       </section>
 
       <section className={styles["form-container"]}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
           <div className={styles["patient-details"]}>
             <fieldset>
               <legend>Reserva tu consulta</legend>
@@ -100,6 +144,7 @@ function RouteComponent() {
                 <div className={styles["input-group"]}>
                   <label htmlFor="first-name">NOMBRE *</label>
                   <input
+                    className={getInputClass("firstName")}
                     type="text"
                     name="firstName"
                     id="first-name"
@@ -110,10 +155,16 @@ function RouteComponent() {
                     value={formData.firstName}
                     onChange={handleChange}
                   />
+                  {errors.firstName && (
+                    <p className={styles["error-message"]}>
+                      {errors.firstName}
+                    </p>
+                  )}
                 </div>
                 <div className={styles["input-group"]}>
                   <label htmlFor="last-name">APELLIDOS *</label>
                   <input
+                    className={getInputClass("lastName")}
                     type="text"
                     name="lastName"
                     id="last-name"
@@ -124,12 +175,16 @@ function RouteComponent() {
                     value={formData.lastName}
                     onChange={handleChange}
                   />
+                  {errors.lastName && (
+                    <p className={styles["error-message"]}>{errors.lastName}</p>
+                  )}
                 </div>
               </div>
               <div className={styles.field}>
                 <div className={styles["input-group"]}>
                   <label htmlFor="email">E-MAIL *</label>
                   <input
+                    className={getInputClass("email")}
                     type="email"
                     name="email"
                     id="email"
@@ -138,25 +193,34 @@ function RouteComponent() {
                     value={formData.email}
                     onChange={handleChange}
                   />
+                  {errors.email && (
+                    <p className={styles["error-message"]}>{errors.email}</p>
+                  )}
                 </div>
                 <div className={styles["input-group"]}>
-                  <label htmlFor="phone-number">NÚMERO TELEFÓNICO *</label>
+                  <label htmlFor="phone-number">NÚMERO TELEFÓNICO</label>
                   <input
+                    className={getInputClass("phoneNumber")}
                     type="tel"
                     name="phoneNumber"
                     id="phone-number"
                     placeholder="5511223344"
-                    required
-                    pattern="[0-9\s\-]{10,}"
+                    pattern="\+?[0-9\s\-]{10,18}"
                     value={formData.phoneNumber}
                     onChange={handleChange}
                   />
+                  {errors.phoneNumber && (
+                    <p className={styles["error-message"]}>
+                      {errors.phoneNumber}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className={styles.field}>
                 <div className={styles["input-group"]}>
                   <label htmlFor="service">TIPO DE CONSULTA *</label>
                   <select
+                    className={getInputClass("service")}
                     name="service"
                     id="service"
                     required
@@ -184,6 +248,9 @@ function RouteComponent() {
                     <option value="Educación en Diabetes">Diabetes</option>
                     <option value="Cineantropometría">Cineantropometría</option>
                   </select>
+                  {errors.service && (
+                    <p className={styles["error-message"]}>{errors.service}</p>
+                  )}
                 </div>
               </div>
             </fieldset>
