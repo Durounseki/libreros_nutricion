@@ -3,7 +3,7 @@
 ## To do list
 
 - [x] Change "Nuestros planes de alimentación están diseñados para ayudarte a:" for each service.
-- [ ] Sanitize contact form data
+- [x] Sanitize contact form data
 - [ ] Add email confirmation input.
 - [x] Highlight active tab on dropdown menu
 - [x] Highlight active tab on mobile menu
@@ -23,11 +23,9 @@
 - [ ] Add links to social media.
 - [ ] Add link to github page.
 - [x] Adjust sizes on mobile version to remove page movement on mobile version.
-- [ ] Infografias
-- [ ] Resultados
-- [ ] Testimonials
+- [x] Testimonials
   - [x] Set up carousel
   - [x] Add review page
-  - [ ] Sanitize review data
+  - [x] Sanitize review data
   - [x] Save review to database
 - [ ] Evaluaciones
