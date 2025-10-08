@@ -2,6 +2,7 @@
 
 ## To do list
 
+- [x] Add error pages.
 - [x] Change "Nuestros planes de alimentación están diseñados para ayudarte a:" for each service.
 - [x] Sanitize contact form data
 - [ ] Add email confirmation input.

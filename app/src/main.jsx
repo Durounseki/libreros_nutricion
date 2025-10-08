@@ -1,18 +1,23 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
+import NotFound from "./components/NotFound";
+import GeneralError from "./components/GeneralError";
+import {
+  ErrorComponent,
+  RouterProvider,
+  createRouter,
+} from "@tanstack/react-router";
 import "./main.css";
 
-// Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
-// Create a new router instance
 const router = createRouter({
   scrollRestoration: true,
+  defaultNotFoundComponent: NotFound,
+  defaultErrorComponent: GeneralError,
   routeTree,
 });
 
-// Render the app
 const rootElement = document.getElementById("root");
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);

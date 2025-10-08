@@ -91,11 +91,11 @@ function MobileHeader() {
             Precios
           </NavLink>
         </div>
-        <div className={styles["nav-tab"]}>
+        {/* <div className={styles["nav-tab"]}>
           <NavLink to="/about" styles={styles} onClick={toggleMenu}>
             Dr. Libreros
           </NavLink>
-        </div>
+        </div> */}
         <div className={styles["nav-tab"]}>
           <NavLink to="/contacto" styles={styles} onClick={toggleMenu}>
             Contacto

@@ -56,11 +56,11 @@ function DesktopHeader() {
             Precios
           </NavLink>
         </div>
-        <div className={styles["nav-tab"]} styles={styles}>
+        {/* <div className={styles["nav-tab"]} styles={styles}>
           <NavLink to="/about" styles={styles}>
             Dr. Libreros
           </NavLink>
-        </div>
+        </div> */}
         <div className={styles["nav-tab"]} styles={styles}>
           <NavLink to="/contacto" styles={styles}>
             Contacto

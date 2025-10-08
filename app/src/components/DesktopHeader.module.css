@@ -84,7 +84,7 @@
       color: var(--bg-light);
       cursor: pointer;
     }
-    div:nth-child(-n + 4) a {
+    div:nth-child(-n + 3) a {
       border-right: solid var(--secondary-dark);
     }
   }
