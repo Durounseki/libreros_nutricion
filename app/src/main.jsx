@@ -7,7 +7,10 @@ import "./main.css";
 import { routeTree } from "./routeTree.gen";
 
 // Create a new router instance
-const router = createRouter({ routeTree });
+const router = createRouter({
+  scrollRestoration: true,
+  routeTree,
+});
 
 // Render the app
 const rootElement = document.getElementById("root");

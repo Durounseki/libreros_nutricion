@@ -41,7 +41,6 @@ function RouteComponent() {
   const getStarClass = (index) => {
     const currentRating = formData.rating;
     const hoverRating = prevRating;
-    console.log(hoverRating, currentRating);
     const isSolid = index < currentRating || index < hoverRating;
     const iconClass = isSolid ? "fa-solid fa-star" : "fa-regular fa-star";
     let colorClass = "";
@@ -189,6 +188,7 @@ function RouteComponent() {
                     placeholder="Escribe tu reseña"
                     name="text"
                     id="text"
+                    value={formData.text}
                     onChange={handleReviewTextChange}
                   ></textarea>
                 </div>
@@ -198,6 +198,18 @@ function RouteComponent() {
           <button className={styles["submit-button"]} type="submit">
             Enviar
           </button>
+          <div className={styles.result}>
+            {submissionStatus === "success" && (
+              <p className={styles.success}>
+                ¡Gracias! Tu mensaje ha sido enviado.
+              </p>
+            )}
+            {submissionStatus === "error" && (
+              <p className={styles.error}>
+                Hubo un error. Por favor, inténtalo de nuevo.
+              </p>
+            )}
+          </div>
         </form>
       </section>
     </main>
